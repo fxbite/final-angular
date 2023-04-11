@@ -33,6 +33,23 @@ $fontSize2: clamp(1em, 2vw, 1.5em);;
             width: 80px;
             height: 20px;
         }
+
+        .p-image img {
+            object-fit: cover;
+            border-radius: 50%;
+            width: 100%;
+            box-shadow: 2px 5px 12px #b5b6ba;
+        }
+
+        .p-image-preview-indicator {
+            border-radius: 50%;
+            width: 100%;
+        }
+
+        .p-image-preview {
+            border-radius: unset !important;
+            box-shadow: unset !important;
+        }
     }
 }
 
@@ -55,13 +72,6 @@ $fontSize2: clamp(1em, 2vw, 1.5em);;
 
             .photo {
                 width: 50%;
-
-                img {
-                    object-fit: cover;
-                    border-radius: 50%;
-                    width: 100%;
-                    box-shadow: 2px 5px 12px #b5b6ba;
-                }
             }
 
             .description {

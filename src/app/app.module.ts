@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +18,7 @@ const PRIMENG_DEPENDENCIES = [ImageModule, InputNumberModule, InputTextModule];
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, RegisterComponent, CartComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule, ...PRIMENG_DEPENDENCIES],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule, BrowserAnimationsModule, ...PRIMENG_DEPENDENCIES],
   providers: [],
   bootstrap: [AppComponent]
 })
