@@ -1,0 +1,146 @@
+$backgroundColor: #f6f6f6;
+$whiteColor: #ffffff;
+$starColor: #f4bb66;
+$clockColor: #e77eb2;
+$fontColor: #2b2e41;
+$hoverColor: #4b4c53;
+$fontSize1: clamp(0.75em, 2vw, 1.25em);;
+$fontSize2: clamp(1em, 2vw, 1.5em);; 
+
+:host {
+    ::ng-deep {
+        #minmax-buttons {
+            width: 70%;
+            height: 100%;
+        }
+
+        .p-inputnumber-button-group {
+            width: 30%;
+            height: 130%;
+        }
+
+        .p-inputnumber-button-up, .p-inputnumber-button-down {
+            width: 100%;
+            background-color: $fontColor;
+            border: none;
+
+            &:hover {
+                background-color: $hoverColor;
+            }
+        }
+
+        .p-inputnumber {
+            width: 80px;
+            height: 20px;
+        }
+    }
+}
+
+.container {
+    width: 500px;
+    max-width: 90vw;
+    padding-top: 50px;
+
+    .item-container {
+        border-radius: 5px;
+        background-color: $backgroundColor;
+        padding: 15px;
+
+        .item {
+            padding: 15px;
+            background-color: $whiteColor;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+
+            .photo {
+                width: 50%;
+
+                img {
+                    object-fit: cover;
+                    border-radius: 50%;
+                    width: 100%;
+                    box-shadow: 2px 5px 12px #b5b6ba;
+                }
+            }
+
+            .description {
+                padding-left: 15px;
+                display: flex;
+                flex-direction: column;
+                color: $fontColor;
+                width: 50%;
+
+                .name, .cook-time, .rating {
+                    font-size: $fontSize1;
+                    height: 20%;
+                }
+
+                .name {
+                    font-weight: bold;
+                }
+
+                .cook-time {
+                    fa-icon {
+                        color: $clockColor;
+                    }
+
+                    .time {
+                        font-size: inherit;
+                    }
+                }
+
+                .rating {
+
+                    fa-icon {
+                        color: $starColor
+                    }
+
+                    .star {
+                        font-size: inherit;
+                    }
+                }
+
+                .price {
+                    font-weight: bold;
+                    font-size: $fontSize2;
+                    height: 25%;
+                }
+
+                .quantity {
+                    padding-top: 10px;
+                }
+            }
+
+            .remove-item {
+                position: absolute;
+                top: 0;
+                right: 5px;
+                cursor: pointer;
+                color: #f70404;
+                font-size: large;
+
+                &:hover {
+                    color: #c71313;
+                }
+            }
+        }
+    }
+
+    .order {
+        margin-top: 10px;
+
+        button {
+            background-color: $fontColor;
+            width: 100%;
+            color: $whiteColor;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+
+            &:hover {
+                background-color: $hoverColor;
+            }
+        }
+    }
+}

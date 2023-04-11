@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="item-container">
+        <div class="item">
+            <div class="photo">
+                <img src="/assets/food-1.jpg" alt="">
+            </div>
+            <div class="description">
+                <span class="name">Pizza Pepperoni</span>
+                <div class="cook-time">
+                    <span class="time"> 
+                        <fa-icon [icon]="timeIcon"></fa-icon> 
+                        10-12
+                    </span>
+                </div>
+                <span class="rating">
+                    <span class="star">
+                        <fa-icon [icon]="starIcon"></fa-icon> 
+                        4.8
+                    </span>
+                </span>
+                <span class="price">${{price * quantity}}</span>
+                <span class="quantity">
+                    <p-inputNumber [(ngModel)]="quantity" mode="decimal" [showButtons]="true" inputId="minmax-buttons" [min]="0"> </p-inputNumber>
+                </span>
+            </div>
+            <div class="remove-item">
+                <fa-icon [icon]="removeIcon"></fa-icon>
+            </div>
+        </div>
+    </div>
+    <div class="order">
+        <button>Order</button>
+    </div>
+</div>
