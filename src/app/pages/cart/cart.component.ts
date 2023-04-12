@@ -9,9 +9,9 @@ import { faStar, faClock, faXmark, faPlus, faMinus } from '@fortawesome/free-sol
 export class CartComponent {
   starIcon = faStar;
   timeIcon = faClock;
-  removeIcon = faXmark
-  increaseIcon = faPlus
-  descreaseIcon = faMinus
-  quantity: number = 1
-  price: number = 5
+  removeIcon = faXmark;
+  increaseIcon = faPlus;
+  descreaseIcon = faMinus;
+  quantity: number = 1;
+  price: number = 5;
 }

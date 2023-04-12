@@ -13,11 +13,14 @@ import { ImageModule } from 'primeng/image';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { OrderComponent } from './pages/order/order.component';
+import { ListOrderComponent } from './components/list-order/list-order.component';
+import { InfoOrderComponent } from './components/info-order/info-order.component';
 
 const PRIMENG_DEPENDENCIES = [ImageModule, InputNumberModule, InputTextModule];
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, CartComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, CartComponent, OrderComponent, ListOrderComponent, InfoOrderComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule, BrowserAnimationsModule, ...PRIMENG_DEPENDENCIES],
   providers: [],
   bootstrap: [AppComponent]
