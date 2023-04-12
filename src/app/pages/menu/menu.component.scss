@@ -1,5 +1,45 @@
 $defaultColor: #f3f3f3;
 
+:host {
+    ::ng-deep {
+
+        .p-card {
+            width: 250px;
+            height: 350px;
+            
+            .p-card-header {
+                
+                img {
+                    height: 25%;
+                }
+            }
+    
+            .p-card-body {
+    
+                .p-card-title {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .p-card-footer {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    p-button {
+                        width: 100%;
+
+                        button {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
 .container {
 
     .action-bar {
