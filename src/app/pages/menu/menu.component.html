@@ -1,36 +1,49 @@
 <div class="container">
     <div class="action-bar">
-        <div class="col">
-            <span class="p-input-icon-left">
-                <i class="pi pi-search"></i>
-                <input type="text" pInputText [(ngModel)]="value" />
-            </span>
-            <span class="p-input-icon-right">
-                <i class="pi pi-spin pi-spinner"></i>
-                <input type="text" pInputText [(ngModel)]="value2" />
-            </span>
-        </div>
-        <div class="col">
-            <p-chip label="FastFood"></p-chip>
-            <p-chip label="Lunch"></p-chip>
-            <p-chip label="Soup"></p-chip>
-            <p-chip label="SlowFood"></p-chip>
+        <div class="row">
+            <div class="col">
+                <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input type="text" pInputText [(ngModel)]="value" />
+                </span>
+                <span class="p-input-icon-right">
+                    <i class="pi pi-spin pi-spinner"></i>
+                    <input type="text" pInputText [(ngModel)]="value2" />
+                </span>
+            </div>
+            <div class="col">
+                <p-chip label="FastFood"></p-chip>
+                <p-chip label="Lunch"></p-chip>
+                <p-chip label="Soup"></p-chip>
+                <p-chip label="SlowFood"></p-chip>
+            </div>
         </div>
     </div>
     <div class="menu-dishes">
-        <div class="col">
-            <p-card header="Advanced Card" subheader="Card Subheader">
+        <div class="col card-container">
+            <p-card header="Advanced Card">
                 <ng-template pTemplate="header">
-                    <img alt="Food" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+                    <img alt="Food" src="/assets/food-1.jpg" />
                 </ng-template>
-                <!-- <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
-                    quas!
-                </p> -->
+                <div class="info-food">
+                    <div class="star">
+                        <fa-icon [icon]="starIcon"></fa-icon>
+                        <span>4.5</span>
+                    </div>
+                    <div class="cook-time">
+                        <fa-icon [icon]="timeIcon"></fa-icon>
+                        <span>10 - 15</span>
+                    </div>
+                </div>
                 <ng-template pTemplate="footer">
-                   
-                    <p-button label="Warning" styleClass="p-button-warning"></p-button>
+                    
                 </ng-template>
+                <div class="price">
+                    $4.9
+                </div>
+                <div class="add-to-cart">
+                    <fa-icon [icon]="cartIcon"></fa-icon>
+                </div>
             </p-card>
         </div>
     </div>

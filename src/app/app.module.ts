@@ -15,6 +15,7 @@ import { ChipModule } from 'primeng/chip';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { RatingModule } from 'primeng/rating';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const PRIMENG_DEPENDENCIES = [
     InputTextModule,
@@ -31,7 +32,7 @@ const PRIMENG_DEPENDENCIES = [
         BrowserModule, 
         AppRoutingModule, 
         FormsModule, 
-        ...PRIMENG_DEPENDENCIES],
+        ...PRIMENG_DEPENDENCIES, FontAwesomeModule],
     providers: [],
     bootstrap: [AppComponent]
 })
