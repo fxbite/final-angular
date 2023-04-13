@@ -1,5 +1,5 @@
-import { environment } from "src/environments/environment";
+import { environment } from 'src/environments/environment';
 
-const BASE_URL = environment.production? '' : 'http://localhost:6000';
-
-
+const BASE_URL = environment.production
+  ? ''
+  : 'http://localhost:6000';

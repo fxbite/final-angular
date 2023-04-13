@@ -3,7 +3,7 @@ import { MessageService } from 'primeng/api';
 import { Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class ToastService {
   subject$ = new Subject();
@@ -16,7 +16,7 @@ export class ToastService {
       severity: 'success',
       summary: 'Login Successful',
       detail: '',
-      life: 2000,
+      life: 2000
     });
   }
   showRegister() {
@@ -25,7 +25,7 @@ export class ToastService {
       severity: 'success',
       summary: 'Register Successful',
       detail: '',
-      life: 3000,
+      life: 3000
     });
   }
 
@@ -35,7 +35,7 @@ export class ToastService {
       severity: 'info',
       summary: 'Item to Cart',
       detail: `@food added to cart!`,
-      life: 2000,
+      life: 2000
     });
   }
 }

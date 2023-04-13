@@ -1,25 +1,44 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './auth/guards/auth.guard';
-import { LoginPageComponent } from './components/pages/login-page/login-page.component';
-import { RegisterComponent } from './components/pages/register/register.component';
-import { HomeComponent } from './components/pages/home/home.component';
-import { FoodDetailComponent } from './components/pages/food-detail/food-detail.component';
+import {
+  RouterModule,
+  Routes
+} from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
+import { LoginPageComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { HomeComponent } from './pages/home/home.component';
+import { FoodDetailComponent } from './pages/food-detail/food-detail.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { OrderComponent } from './pages/order/order.component';
 import { MenuComponent } from './pages/menu/menu.component';
-
+// , canActivate: [AuthGuard]
 const routes: Routes = [
   { path: '', component: LoginPageComponent },
-  { path: 'login', component: LoginPageComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'food-detail', component: FoodDetailComponent },
   {
-        path: 'menu',
-        component: MenuComponent,
-        title: 'Basic Form'
-    },
+    path: 'login',
+    component: LoginPageComponent,
+    title: 'Login'
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    title: 'Register'
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+    title: 'Home'
+  },
+  {
+    path: 'food-detail',
+    component: FoodDetailComponent,
+    title: 'Food Detail'
+  },
+  {
+    path: 'menu',
+    component: MenuComponent,
+    title: 'Basic Form'
+  },
   {
     path: 'cart',
     component: CartComponent,
@@ -29,8 +48,8 @@ const routes: Routes = [
     path: 'order/:slug',
     component: OrderComponent,
     title: 'Order'
-  },
-]
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

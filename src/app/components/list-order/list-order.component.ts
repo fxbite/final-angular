@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './list-order.component.html',
   styleUrls: ['./list-order.component.scss']
 })
-export class ListOrderComponent {
-
-}
+export class ListOrderComponent {}

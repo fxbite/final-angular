@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {
+  HttpClientModule,
+  HTTP_INTERCEPTORS
+} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginPageComponent } from './components/pages/login-page/login-page.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormsModule,
+  ReactiveFormsModule
+} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 import { AuthInterceptor } from './auth/auth.interceptor';
@@ -51,7 +56,9 @@ import { BlockUIModule } from 'primeng/blockui';
 import { DeferModule } from 'primeng/defer';
 import { FileUploadModule } from 'primeng/fileupload';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { ImageModule } from 'primeng/image';
 
+// addition
 import { PasswordModule } from 'primeng/password';
 import { ScrollTopModule } from 'primeng/scrolltop';
 import { BadgeModule } from 'primeng/badge';
@@ -59,12 +66,18 @@ import { RatingModule } from 'primeng/rating';
 import { GalleriaModule } from 'primeng/galleria';
 import { ToastService } from './services/toast.service';
 
-import { RegisterComponent } from './components/pages/register/register.component';
-import { HomeComponent } from './components/pages/home/home.component';
-import { NavbarComponent } from './components/global/navbar/navbar.component';
+// component
+import { LoginPageComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { MessageService } from 'primeng/api';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { FoodDetailComponent } from './components/pages/food-detail/food-detail.component';
+import { FoodDetailComponent } from './pages/food-detail/food-detail.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { MenuComponent } from './pages/menu/menu.component';
+import { OrderComponent } from './pages/order/order.component';
+import { ChipModule } from 'primeng/chip';
 
 const PRIMENG_DEPENDENCIES = [
   ButtonModule,
@@ -116,6 +129,8 @@ const PRIMENG_DEPENDENCIES = [
   FormsModule,
   RatingModule,
   GalleriaModule,
+  ImageModule,
+  ChipModule
 ];
 
 @NgModule({
@@ -126,6 +141,9 @@ const PRIMENG_DEPENDENCIES = [
     HomeComponent,
     NavbarComponent,
     FoodDetailComponent,
+    CartComponent,
+    MenuComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
@@ -133,15 +151,23 @@ const PRIMENG_DEPENDENCIES = [
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    ...PRIMENG_DEPENDENCIES,
+    ...PRIMENG_DEPENDENCIES
   ],
   exports: [...PRIMENG_DEPENDENCIES],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
+      multi: true
+    },
     ToastService,
-    MessageService,
+    MessageService
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

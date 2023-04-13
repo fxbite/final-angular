@@ -6,24 +6,23 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LocationService {
+  constructor() {}
 
-  constructor() { }
-
-  getCurrentLocation(): Observable<LatLngLiteral>{
+  getCurrentLocation(): Observable<LatLngLiteral> {
     return new Observable((observer) => {
-      if(!navigator.geolocation) return;
+      if (!navigator.geolocation) return;
 
       return navigator.geolocation.getCurrentPosition(
         (pos) => {
           observer.next({
             lat: pos.coords.latitude,
             lng: pos.coords.longitude
-          })
+          });
         },
         (error) => {
           observer.error(error);
         }
-      )
-    })
+      );
+    });
   }
 }
