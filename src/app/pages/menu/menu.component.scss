@@ -1,0 +1,131 @@
+$defaultColor: #f3f3f3;
+
+:host {
+    ::ng-deep {
+
+        .p-card {
+            height: 100%;
+            
+            .p-card-header {
+                height: 50%;
+                padding: 10px;
+
+                img {
+                    height: 100%;
+                    border-radius: 10px;
+                    box-shadow: 5px 7px #e9eaee;
+                }
+            }
+    
+            .p-card-content {
+                padding-top: 0.5em;
+            }
+
+            .p-card-body {
+                position: relative;
+                height: 50%;
+    
+                .p-card-title {
+                    display: flex;
+                    justify-content: center;
+                    font-size: 1.3em;
+                }
+
+                .p-card-footer {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    p-button {
+                        width: 100%;
+
+                        button {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.container {
+
+    .action-bar {
+        padding: 20px;
+    }
+
+    .menu-dishes {
+        padding: 8px;
+        border-radius: 6px;
+        background-color: $defaultColor;
+
+        .card-container {
+            width: 240px;
+            height: 350px;
+
+            .info-food {
+                display: flex;
+                flex-direction: row;
+
+                fa-icon {
+                    font-size: 1.5em;
+                }
+
+                span {
+                    font-size: 1.2em;
+                }
+
+                .star {
+                    width: 50%;
+
+                    fa-icon {
+                        color: #f2b761;
+                    }
+
+                    span {
+                        margin-left: 3px;
+                    }
+                }
+
+                .cook-time {
+                    width: 50%;
+
+                    fa-icon {
+                        color: #ef79b5;
+                    }
+
+                    span {
+                        margin-left: 3px;
+                    }
+                }
+            }
+
+            .add-to-cart {
+                border-top-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                background-color: #272525;
+                padding: 5px;
+                color: white;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+
+            .price {
+                font-weight: bold;
+                font-size: 1.4em;
+                position: absolute;
+                bottom: 10px;
+                left: 20px;
+            }
+
+        }
+    }
+}
