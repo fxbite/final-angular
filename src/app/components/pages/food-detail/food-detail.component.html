@@ -1,0 +1,160 @@
+<!--  use header component -->
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div style="background-color: rgba(0, 0, 0, 0.1); ">
+                <p-galleria [numVisible]="3" [value]="images" [autoPlay]="true" [circular]="true"
+                    [transitionInterval]="3000">
+                    <ng-template pTemplate="item" let-item>
+                        <img [src]="item.previewImageSrc" alt="" [title]="item.title" class="w-100" />
+                    </ng-template>
+
+                    <ng-template pTemplate="thumbnail" let-item width="50%">
+                        <div class="grid  grid-nogutter justify-content-center">
+                            <img [src]="item.thumbnailImageSrc" alt="" [title]="item.title" width=80% />
+                        </div>
+                    </ng-template>
+
+                </p-galleria>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h1>Food 4</h1>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <a href="" class="text-secondary">
+                        <h4>By Unknown</h4>
+                    </a>
+                    <h4>Origins: ...</h4>
+                </div>
+            </div>
+            <p class="text-justify">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod
+                tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p class="product-description"><i class="pi pi-stopwatch"></i> Cookie time: n/a</p>
+            <p-rating [(ngModel)]="valueS" [cancel]="false"></p-rating>
+
+            <div class="my-3">
+                <p><i class="pi pi-tags"></i></p>
+                <p-button label="Snack" styleClass="p-button-secondary"></p-button>
+                <p-button label="Fast Food" styleClass="p-button-secondary"></p-button>
+                <p-button label="Fry" styleClass="p-button-secondary"></p-button>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <h3>$40.00</h3>
+                </div>
+                <div class="col-4">
+                    <p-inputNumber [(ngModel)]="value1" mode="decimal" [showButtons]="true" buttonLayout="horizontal"
+                        [pTooltip]="btnQty" tooltipPosition="bottom" inputId="minmax-buttons"
+                        incrementButtonIcon="pi pi-caret-right" decrementButtonIcon="pi pi-caret-left" [min]="0"
+                        [max]="100">
+                    </p-inputNumber>
+                </div>
+            </div>
+
+            <div class="my-3">
+                <p-button icon="pi pi-cart-plus" [pTooltip]="btnCart" tooltipPosition="bottom"
+                    styleClass="p-button-raised p-button-warning me-3"></p-button>
+                <p-toggleButton [(ngModel)]="favourite" [onIcon]="'pi pi-heart-fill'"
+                    [offIcon]="'pi pi-heart'"></p-toggleButton>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="container center-all pb-5">
+    <h2 class="text-center">Food 4 Full Description</h2>
+    <hr class="hr-short">
+
+    <div class="col-md-8 col-md-offset-2">
+        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis
+            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <img src="/assets/img/food-4.jpg" class="w-100 p-4 my-3">
+
+        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis
+            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+</div>
+
+
+<div class="container center-all pb-5">
+    <h2 class="text-center">Complete your Dish</h2>
+    <hr class="hr-short">
+
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <a href="#" class="rec_item recommend p-0 m-0">
+                <img src="/assets/img/food-1.jpg" alt="">
+            </a>
+            <div class="box">
+                <h3>Food 1</h3>
+                <div class="row">
+                    <div class="col-sm-8 col-6">
+                        <p class="p-price">$23.00 / pcs</p>
+                        <small>5 pcs min order</small>
+                    </div>
+                    <fa-icon [icon]="faAddCart"></fa-icon>
+                    <div class="col-sm-4 col-6">
+                        <p-button icon="pi pi-cart-plus"
+                            styleClass="p-button-raised p-button-warning float-end"></p-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <a href="#" class="rec_item recommend p-0 m-0">
+                <img src="/assets/img/food-2.jpg" alt="">
+            </a>
+            <div class="box">
+                <h3>Food 2</h3>
+                <div class="row">
+                    <div class="col-sm-8 col-6">
+                        <p class="p-price">$45.00 / pcs</p>
+                        <small>10 pcs min order</small>
+                    </div>
+
+                    <div class="col-sm-4 col-6">
+                        <p-button icon="pi pi-cart-plus"
+                            styleClass="p-button-raised p-button-warning float-end"></p-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <a href="#" class="rec_item recommend p-0 m-0">
+                <img src="/assets/img/food-3.jpg" alt="">
+            </a>
+            <div class="box">
+                <h3>Food 3</h3>
+                <div class="row">
+                    <div class="col-sm-8 col-6">
+                        <p class="p-price">$45.00 / pcs</p>
+                        <small>10 pcs min order</small>
+                    </div>
+
+                    <div class="col-sm-4 col-6">
+                        <p-button icon="pi pi-cart-plus"
+                            styleClass="p-button-raised p-button-warning float-end"></p-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
