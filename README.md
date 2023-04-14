@@ -4,7 +4,7 @@ This project install additionally:
 
 - bootstrap v5.2.3 [npm i bootstrap@v5.2.3]
 - font awesome v3.1.2
-- folder [extra_img](OrderFoodApp_SS-Fox/src/assets/img/Extra_img/)
+- folder [extra_img](src/assets/Extra_img/)
 
 ## Functionally
 
