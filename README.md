@@ -1,27 +1,40 @@
-# MockAngular
+# Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+This project install additionally:
 
-## Development server
+- bootstrap v5.2.3 [npm i bootstrap@v5.2.3]
+- font awesome v3.1.2
+- folder [extra_img](OrderFoodApp_SS-Fox/src/assets/img/Extra_img/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Functionally
 
-## Code scaffolding
+- Login, Register, Authentication (Admin - User)
+- (HomePage)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Note
 
-## Build
+- Flow: pick food -> cart -> order page -> order confirmation
+- Order page: valiate (address, food amount > 0), address & time set locally
+- Message pop-up for each request/action [Prime Component](https://primeng.org/toast)
+- Toast service outside/common
+- skeleton: spinner (at minimum)
+- register.html - ngif validator['notSame'] ('PasswordsMatchValidator') didnt display
+- multi-lang, food detail
+- create recipe: InputGroup (price), EditorModule (desc)
+- membership?
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Pending features
 
-## Running unit tests
+| Feature     |           Note           |     Status     |
+| ----------- | :----------------------: | :------------: |
+| Lazy module |       more routing       | `Pending Last` |
+| Test case   |         spec.ts          | `Pending Last` |
+| Email magic | forgot pass, remember me |   `Pending`    |
+| More        |                          |  `Processing`  |
+| Admin role  |                          | `Pending Last` |
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Other:
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- light: #F5F5F5 | #e5e9ea | aliceblue
+- dark: #000 | #333
+- other variant (hot -> cold): #f8d095 > #e19f49 > #8d4821 > #452a19

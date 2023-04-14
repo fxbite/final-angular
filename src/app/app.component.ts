@@ -19,7 +19,12 @@ export class AppComponent implements OnInit {
         this.ts.showRegister();
       } else if (res === 'itemToCart') {
         this.ts.showAddToCart();
+      } else if (res === 'order') {
+        this.ts.showOrder();
       }
     });
   }
+  // avoid if else by declaring func getStatusMess(key: string) {
+  // 
+  // }
 }

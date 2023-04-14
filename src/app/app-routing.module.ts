@@ -30,14 +30,16 @@ const routes: Routes = [
     title: 'Home'
   },
   {
-    path: 'food-detail',
-    component: FoodDetailComponent,
-    title: 'Food Detail'
-  },
-  {
     path: 'menu',
     component: MenuComponent,
-    title: 'Basic Form'
+    title: 'Basic Form',
+    children: [
+      {
+        path: 'food-detail',
+        component: FoodDetailComponent,
+        title: 'Food Detail'
+      }
+    ]
   },
   {
     path: 'cart',
@@ -49,6 +51,8 @@ const routes: Routes = [
     component: OrderComponent,
     title: 'Order'
   }
+  // addition:
+  // { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({

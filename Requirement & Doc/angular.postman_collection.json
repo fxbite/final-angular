@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "47de2ab1-71d0-4f9f-b366-b3611ac740d2",
+		"name": "angular",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7342183"
+	},
+	"item": [
+		{
+			"name": "Get List Tag",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiS2F0aGFyeW4gQm91Y2hlciIsIlVzZXJJZCI6IjUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBdWRpdG9yIiwiU3lsbGFidXNQZXJtaXNzaW9uIjoiQWNjZXNzRGVuaWVkIiwiVHJhaW5pbmdQcm9ncmFtUGVybWlzc2lvbiI6IkFjY2Vzc0RlbmllZCIsIkNsYXNzUGVybWlzc2lvbiI6IkFjY2Vzc0RlbmllZCIsIkxlYXJuaW5nTWF0ZXJpYWxQZXJtaXNzaW9uIjoiQWNjZXNzRGVuaWVkIiwiVXNlclBlcm1pc3Npb24iOiJBY2Nlc3NEZW5pZWQiLCJleHAiOjE2ODA1NDE5MzQsImlzcyI6IkZBVE1TQXV0aGVudGljYXRvciIsImF1ZCI6IkZBVE1TUG9zdG1hbkNsaWVudCJ9.xIDZAfDh1KZKCutHTnHSpS1dpjJsueLanxYkZNAvxXU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://intern-greenwich-be.onrender.com/api/foods/tags",
+					"protocol": "https",
+					"host": [
+						"intern-greenwich-be",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"foods",
+						"tags"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get List Food",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiS2F0aGFyeW4gQm91Y2hlciIsIlVzZXJJZCI6IjUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBdWRpdG9yIiwiU3lsbGFidXNQZXJtaXNzaW9uIjoiQWNjZXNzRGVuaWVkIiwiVHJhaW5pbmdQcm9ncmFtUGVybWlzc2lvbiI6IkFjY2Vzc0RlbmllZCIsIkNsYXNzUGVybWlzc2lvbiI6IkFjY2Vzc0RlbmllZCIsIkxlYXJuaW5nTWF0ZXJpYWxQZXJtaXNzaW9uIjoiQWNjZXNzRGVuaWVkIiwiVXNlclBlcm1pc3Npb24iOiJBY2Nlc3NEZW5pZWQiLCJleHAiOjE2ODA1NDE5MzQsImlzcyI6IkZBVE1TQXV0aGVudGljYXRvciIsImF1ZCI6IkZBVE1TUG9zdG1hbkNsaWVudCJ9.xIDZAfDh1KZKCutHTnHSpS1dpjJsueLanxYkZNAvxXU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://intern-greenwich-be.onrender.com/api/foods",
+					"protocol": "https",
+					"host": [
+						"intern-greenwich-be",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"foods"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Food By Name",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiS2F0aGFyeW4gQm91Y2hlciIsIlVzZXJJZCI6IjUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBdWRpdG9yIiwiU3lsbGFidXNQZXJtaXNzaW9uIjoiQWNjZXNzRGVuaWVkIiwiVHJhaW5pbmdQcm9ncmFtUGVybWlzc2lvbiI6IkFjY2Vzc0RlbmllZCIsIkNsYXNzUGVybWlzc2lvbiI6IkFjY2Vzc0RlbmllZCIsIkxlYXJuaW5nTWF0ZXJpYWxQZXJtaXNzaW9uIjoiQWNjZXNzRGVuaWVkIiwiVXNlclBlcm1pc3Npb24iOiJBY2Nlc3NEZW5pZWQiLCJleHAiOjE2ODA1NDE5MzQsImlzcyI6IkZBVE1TQXV0aGVudGljYXRvciIsImF1ZCI6IkZBVE1TUG9zdG1hbkNsaWVudCJ9.xIDZAfDh1KZKCutHTnHSpS1dpjJsueLanxYkZNAvxXU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://intern-greenwich-be.onrender.com/api/foods/search/Pizza Pepperoni",
+					"protocol": "https",
+					"host": [
+						"intern-greenwich-be",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"foods",
+						"search",
+						"Pizza Pepperoni"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Food By tag name",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiS2F0aGFyeW4gQm91Y2hlciIsIlVzZXJJZCI6IjUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBdWRpdG9yIiwiU3lsbGFidXNQZXJtaXNzaW9uIjoiQWNjZXNzRGVuaWVkIiwiVHJhaW5pbmdQcm9ncmFtUGVybWlzc2lvbiI6IkFjY2Vzc0RlbmllZCIsIkNsYXNzUGVybWlzc2lvbiI6IkFjY2Vzc0RlbmllZCIsIkxlYXJuaW5nTWF0ZXJpYWxQZXJtaXNzaW9uIjoiQWNjZXNzRGVuaWVkIiwiVXNlclBlcm1pc3Npb24iOiJBY2Nlc3NEZW5pZWQiLCJleHAiOjE2ODA1NDE5MzQsImlzcyI6IkZBVE1TQXV0aGVudGljYXRvciIsImF1ZCI6IkZBVE1TUG9zdG1hbkNsaWVudCJ9.xIDZAfDh1KZKCutHTnHSpS1dpjJsueLanxYkZNAvxXU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://intern-greenwich-be.onrender.com/api/foods/tag/Lunch",
+					"protocol": "https",
+					"host": [
+						"intern-greenwich-be",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"foods",
+						"tag",
+						"Lunch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order By User ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmJlNjJkOTU4OTQwZTRlMTMwNTUzZiIsImVtYWlsIjoiYmp3d3dAZ21haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY4MDYwNjI0OSwiZXhwIjoxNjgzMTk4MjQ5fQ.XtNjxwRHS48IbSJ4eB723YYDF8hYB5_5hTb2jwEcXw4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://intern-greenwich-be.onrender.com/api/orders/track/642be62d958940e4e130553f",
+					"protocol": "https",
+					"host": [
+						"intern-greenwich-be",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"orders",
+						"track",
+						"642be62d958940e4e130553f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

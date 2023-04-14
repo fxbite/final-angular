@@ -38,4 +38,14 @@ export class ToastService {
       life: 2000
     });
   }
+
+  showOrder() {
+    this.ms.add({
+      key: 'order',
+      severity: 'info',
+      summary: 'Order Confirmed',
+      detail: `@order has been submitted!`,
+      life: 2000
+    });
+  }
 }

@@ -61,9 +61,12 @@ import { ImageModule } from 'primeng/image';
 // addition
 import { PasswordModule } from 'primeng/password';
 import { ScrollTopModule } from 'primeng/scrolltop';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BadgeModule } from 'primeng/badge';
 import { RatingModule } from 'primeng/rating';
 import { GalleriaModule } from 'primeng/galleria';
+import { ChipModule } from 'primeng/chip';
+import { MessageService } from 'primeng/api';
 import { ToastService } from './services/toast.service';
 
 // component
@@ -71,13 +74,10 @@ import { LoginPageComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { MessageService } from 'primeng/api';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FoodDetailComponent } from './pages/food-detail/food-detail.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { OrderComponent } from './pages/order/order.component';
-import { ChipModule } from 'primeng/chip';
 
 const PRIMENG_DEPENDENCIES = [
   ButtonModule,
