@@ -30,16 +30,15 @@ const routes: Routes = [
     title: 'Home'
   },
   {
+    path: 'food-detail',
+    component: FoodDetailComponent,
+    title: 'Food Detail'
+  },
+  {
     path: 'menu',
     component: MenuComponent,
     title: 'Basic Form',
-    children: [
-      {
-        path: 'food-detail',
-        component: FoodDetailComponent,
-        title: 'Food Detail'
-      }
-    ]
+    children: []
   },
   {
     path: 'cart',
@@ -52,6 +51,7 @@ const routes: Routes = [
     title: 'Order'
   }
   // addition:
+  // orderConfirm
   // { path: '**', component: PageNotFoundComponent },
 ];
 

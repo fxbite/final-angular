@@ -13,7 +13,7 @@ This project install additionally:
 
 ## Note
 
-- Flow: pick food -> cart -> order page -> order confirmation
+- Flow: pick food -> cart -> order page -> order confirmation (admin comfirm order's status)
 - Order page: valiate (address, food amount > 0), address & time set locally
 - Message pop-up for each request/action [Prime Component](https://primeng.org/toast)
 - Toast service outside/common
@@ -21,7 +21,7 @@ This project install additionally:
 - register.html - ngif validator['notSame'] ('PasswordsMatchValidator') didnt display
 - multi-lang, food detail
 - create recipe: InputGroup (price), EditorModule (desc)
-- membership?
+-
 
 ## Pending features
 
