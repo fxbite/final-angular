@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  Validators
-} from '@angular/forms';
-import {
-  ActivatedRoute,
-  Router
-} from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastService } from 'src/app/services/toast.service';
 import { UserService } from 'src/app/services/user.service';
 import { PasswordsMatchValidator } from 'src/app/shared/validators/password_match_validator';
@@ -34,28 +27,14 @@ export class RegisterComponent {
   ngOnInit(): void {
     this.registerForm = this.fb.group(
       {
-        name: this.fb.control('', [
-          Validators.required
-        ]),
-        email: this.fb.control('', [
-          Validators.required,
-          Validators.email
-        ]),
-        password: this.fb.control('', [
-          Validators.required
-        ]),
-        confirmPassword: this.fb.control('', [
-          Validators.required
-        ]),
-        address: this.fb.control('', [
-          Validators.required
-        ])
+        name: this.fb.control('', [Validators.required]),
+        email: this.fb.control('', [Validators.required, Validators.email]),
+        password: this.fb.control('', [Validators.required]),
+        confirmPassword: this.fb.control('', [Validators.required]),
+        address: this.fb.control('', [Validators.required])
       },
       {
-        validator: PasswordsMatchValidator(
-          'password',
-          'confirmPassword'
-        )
+        validator: PasswordsMatchValidator('password', 'confirmPassword')
       }
     );
   }

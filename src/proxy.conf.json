@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://intern-greenwich-be.onrender.com/",
+    "target": "https://intern-greenwich-be.cyclic.app/",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true

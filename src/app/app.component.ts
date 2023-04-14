@@ -25,6 +25,6 @@ export class AppComponent implements OnInit {
     });
   }
   // avoid if else by declaring func getStatusMess(key: string) {
-  // 
+  //
   // }
 }

@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  faStar,
-  faCartPlus,
-  faStopwatch
-} from '@fortawesome/free-solid-svg-icons';
+import { faStar, faCartPlus, faStopwatch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-menu',

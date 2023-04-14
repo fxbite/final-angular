@@ -18,6 +18,7 @@ export class LocationService {
             lat: pos.coords.latitude,
             lng: pos.coords.longitude
           });
+          observer.complete();
         },
         (error) => {
           observer.error(error);

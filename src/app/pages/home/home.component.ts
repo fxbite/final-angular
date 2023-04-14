@@ -1,12 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  faHandshake,
-  faHouseFlag,
-  faTruckFast,
-  faCalendarCheck,
-  faClipboardCheck,
-  faTicket
-} from '@fortawesome/free-solid-svg-icons';
+import { faHandshake, faHouseFlag, faTruckFast, faCalendarCheck, faClipboardCheck, faTicket } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',

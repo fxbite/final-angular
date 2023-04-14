@@ -1,11 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  faStar,
-  faClock,
-  faXmark,
-  faPlus,
-  faMinus
-} from '@fortawesome/free-solid-svg-icons';
+import { faStar, faClock, faXmark, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',

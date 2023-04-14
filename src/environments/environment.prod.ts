@@ -11,8 +11,7 @@ export const environment = {
 
   ORDERS_URL: '/api/orders',
   ORDER_CREATE_URL: '/api/orders/create',
-  ORDER_NEW_FOR_CURRENT_USER_URL:
-    '/api/orders/newOrderForCurrentUser',
+  ORDER_NEW_FOR_CURRENT_USER_URL: '/api/orders/newOrderForCurrentUser',
   ORDER_PAY_URL: '/api/orders/pay',
   ORDER_TRACK_URL: '/api/orders/track/'
 };

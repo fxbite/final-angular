@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators
-} from '@angular/forms';
-import {
-  ActivatedRoute,
-  Router
-} from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastService } from 'src/app/services/toast.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -16,9 +9,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginPageComponent
-  implements OnInit
-{
+export class LoginPageComponent implements OnInit {
   loginForm!: FormGroup;
   isSubmitted = false;
   returnUrl = '';
@@ -37,13 +28,8 @@ export class LoginPageComponent
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      email: this.fb.control('', [
-        Validators.required,
-        Validators.email
-      ]),
-      password: this.fb.control('', [
-        Validators.required
-      ])
+      email: this.fb.control('', [Validators.required, Validators.email]),
+      password: this.fb.control('', [Validators.required])
     });
 
     // this.auth.currentUser.subscribe((data) => (this.user = data));
