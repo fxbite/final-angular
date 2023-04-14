@@ -1,37 +1,42 @@
 <app-navbar></app-navbar>
 <div class="container">
-    <div class="item-container">
-        <div class="item">
-            <div class="photo">
-                <p-image src="/assets/img/food-1.jpg" alt="Image" [preview]="true"></p-image>
-            </div>
-            <div class="description">
-                <span class="name">Pizza Pepperoni</span>
-                <div class="cook-time">
-                    <span class="time"> 
-                        <fa-icon [icon]="timeIcon"></fa-icon> 
-                        10-12
-                    </span>
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let item of cart.items">
+            <div class="item-container">
+                <div class="item">
+                    <div class="photo">
+                        <p-image [src]="'{{item.food.imageUrl}}'" alt="Image" [preview]="true"></p-image>
+                    </div>
+                    <div class="description">
+                        <span class="name">{{item.food.name}}</span>
+                        <div class="cook-time">
+                            <span class="time">
+                                <fa-icon [icon]="timeIcon"></fa-icon>
+                                {{item.food.cookTime}}
+                            </span>
+                        </div>
+                        <span class="rating">
+                            <span class="star">
+                                <fa-icon [icon]="starIcon"></fa-icon>
+                                {{item.food.stars}}
+                            </span>
+                        </span>
+                        <span class="price">{{item.totalItemPrice}}</span>
+                        <span class="quantity">
+                            <p-inputNumber [(ngModel)]="item.itemQty" mode="decimal" [showButtons]="true"
+                                inputId="minmax-buttons" [min]="1" [max]="100"> </p-inputNumber>
+                        </span>
+                    </div>
+
+                    <div class="float-end">
+                        <p-button icon="pi pi-trash" styleClass="p-button-rounded p-button-secondary del-btn"
+                            (click)="deleteItem(item)"></p-button>
+                    </div>
                 </div>
-                <span class="rating">
-                    <span class="star">
-                        <fa-icon [icon]="starIcon"></fa-icon> 
-                        4.8
-                    </span>
-                </span>
-                <span class="price">${{price * quantity}}</span>
-                <span class="quantity">
-                    <p-inputNumber [(ngModel)]="quantity" mode="decimal" [showButtons]="true" inputId="minmax-buttons" [min]="0"> </p-inputNumber>
-                </span>
-            </div>
-            <div class="remove-item">
-                <fa-icon [icon]="removeIcon"></fa-icon>
             </div>
         </div>
-    </div>
-    <div class="order">
-        <button>Order</button>
+        <div class="col-12 order">
+            <button>Order</button>
+        </div>
     </div>
 </div>
-
-

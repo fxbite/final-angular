@@ -21,7 +21,7 @@ This project install additionally:
 - register.html - ngif validator['notSame'] ('PasswordsMatchValidator') didnt display
 - multi-lang, food detail
 - create recipe: InputGroup (price), EditorModule (desc)
--
+- set debounce for btn
 
 ## Pending features
 

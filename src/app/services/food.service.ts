@@ -1,38 +1,45 @@
 import { Injectable } from '@angular/core';
-import { Food } from '../shared/models/Food';
+import {
+  Food,
+  FoodTag
+} from '../shared/models/Food';
+import {
+  sample_foods,
+  sample_tags
+} from 'src/assets/data/FoodSample';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FoodSearchService {
+export class FoodService {
   constructor() {}
-  getAll(): Food[] {
+  getSampleFood(): Food[] {
     return sample_foods;
   }
 
-  getAllFoodsBySearchTerm(searchTerm: string) {
-    return this.getAll().filter((food) =>
+  searchFood(searchTerm: string) {
+    return this.getSampleFood().filter((food) =>
       food.name
         .toLowerCase()
         .includes(searchTerm.toLowerCase())
     );
   }
 
-  getAllTags(): Tag[] {
+  getSampleTag(): FoodTag[] {
     return sample_tags;
   }
 
-  getAllFoodsByTag(tag: string): Food[] {
+  filterFoodByTag(tag: string): Food[] {
     return tag === 'All'
-      ? this.getAll()
-      : this.getAll().filter((food) =>
+      ? this.getSampleFood()
+      : this.getSampleFood().filter((food) =>
           food.tags?.includes(tag)
         );
   }
 
   getFoodById(foodId: string): Food {
     return (
-      this.getAll().find(
+      this.getSampleFood().find(
         (food) => food.id == foodId
       ) ?? new Food()
     );

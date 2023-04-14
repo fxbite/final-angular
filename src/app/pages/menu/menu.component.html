@@ -1,177 +1,32 @@
 <app-navbar></app-navbar>
+
 <div class="container">
     <div class="action-bar">
-        <div class="row">
-            <div class="col">
-                <span class="p-input-icon-left">
-                    <i class="pi pi-search"></i>
-                    <input type="text" pInputText [(ngModel)]="value" />
-                </span>
-                <span class="p-input-icon-right">
-                    <i class="pi pi-spin pi-spinner"></i>
-                    <input type="text" pInputText [(ngModel)]="value2" />
-                </span>
-            </div>
-            <div class="col">
-                <p-chip label="FastFood"></p-chip>
-                <p-chip label="Lunch"></p-chip>
-                <p-chip label="Soup"></p-chip>
-                <p-chip label="SlowFood"></p-chip>
-            </div>
-        </div>
+        <app-food-search></app-food-search>
     </div>
+
     <div class="menu-dishes">
         <div class="row">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 card-container">
-                <p-card header="Advanced Card">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 card-container" *ngFor="let food of foods">
+                <p-card header="{{food.name}}">
                     <ng-template pTemplate="header">
-                        <img alt="Food" src="/assets/img/food-1.jpg" />
+                        <img [src]="food.imageUrl" [alt]="food.name" />
                     </ng-template>
                     <div class="info-food">
                         <div class="star">
                             <fa-icon [icon]="starIcon"></fa-icon>
-                            <span>4.5</span>
+                            <span>{{food.stars}}</span>
                         </div>
                         <div class="cook-time">
                             <fa-icon [icon]="timeIcon"></fa-icon>
-                            <span>10 - 15</span>
+                            <span>{{food.cookTime}}</span>
                         </div>
                     </div>
                     <ng-template pTemplate="footer">
-                        
+
                     </ng-template>
                     <div class="price">
-                        $4.9
-                    </div>
-                    <div class="add-to-cart">
-                        <fa-icon [icon]="cartIcon"></fa-icon>
-                    </div>
-                </p-card>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 card-container">
-                <p-card header="Advanced Card">
-                    <ng-template pTemplate="header">
-                        <img alt="Food" src="/assets/img/food-1.jpg" />
-                    </ng-template>
-                    <div class="info-food">
-                        <div class="star">
-                            <fa-icon [icon]="starIcon"></fa-icon>
-                            <span>4.5</span>
-                        </div>
-                        <div class="cook-time">
-                            <fa-icon [icon]="timeIcon"></fa-icon>
-                            <span>10 - 15</span>
-                        </div>
-                    </div>
-                    <ng-template pTemplate="footer">
-                        
-                    </ng-template>
-                    <div class="price">
-                        $4.9
-                    </div>
-                    <div class="add-to-cart">
-                        <fa-icon [icon]="cartIcon"></fa-icon>
-                    </div>
-                </p-card>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 card-container">
-                <p-card header="Advanced Card">
-                    <ng-template pTemplate="header">
-                        <img alt="Food" src="/assets/img/food-1.jpg" />
-                    </ng-template>
-                    <div class="info-food">
-                        <div class="star">
-                            <fa-icon [icon]="starIcon"></fa-icon>
-                            <span>4.5</span>
-                        </div>
-                        <div class="cook-time">
-                            <fa-icon [icon]="timeIcon"></fa-icon>
-                            <span>10 - 15</span>
-                        </div>
-                    </div>
-                    <ng-template pTemplate="footer">
-                        
-                    </ng-template>
-                    <div class="price">
-                        $4.9
-                    </div>
-                    <div class="add-to-cart">
-                        <fa-icon [icon]="cartIcon"></fa-icon>
-                    </div>
-                </p-card>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3  card-container">
-                <p-card header="Advanced Card">
-                    <ng-template pTemplate="header">
-                        <img alt="Food" src="/assets/img/food-1.jpg" />
-                    </ng-template>
-                    <div class="info-food">
-                        <div class="star">
-                            <fa-icon [icon]="starIcon"></fa-icon>
-                            <span>4.5</span>
-                        </div>
-                        <div class="cook-time">
-                            <fa-icon [icon]="timeIcon"></fa-icon>
-                            <span>10 - 15</span>
-                        </div>
-                    </div>
-                    <ng-template pTemplate="footer">
-                        
-                    </ng-template>
-                    <div class="price">
-                        $4.9
-                    </div>
-                    <div class="add-to-cart">
-                        <fa-icon [icon]="cartIcon"></fa-icon>
-                    </div>
-                </p-card>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 card-container">
-                <p-card header="Advanced Card">
-                    <ng-template pTemplate="header">
-                        <img alt="Food" src="/assets/img/food-1.jpg" />
-                    </ng-template>
-                    <div class="info-food">
-                        <div class="star">
-                            <fa-icon [icon]="starIcon"></fa-icon>
-                            <span>4.5</span>
-                        </div>
-                        <div class="cook-time">
-                            <fa-icon [icon]="timeIcon"></fa-icon>
-                            <span>10 - 15</span>
-                        </div>
-                    </div>
-                    <ng-template pTemplate="footer">
-                        
-                    </ng-template>
-                    <div class="price">
-                        $4.9
-                    </div>
-                    <div class="add-to-cart">
-                        <fa-icon [icon]="cartIcon"></fa-icon>
-                    </div>
-                </p-card>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 card-container">
-                <p-card header="Advanced Card">
-                    <ng-template pTemplate="header">
-                        <img alt="Food" src="/assets/img/food-1.jpg" />
-                    </ng-template>
-                    <div class="info-food">
-                        <div class="star">
-                            <fa-icon [icon]="starIcon"></fa-icon>
-                            <span>4.5</span>
-                        </div>
-                        <div class="cook-time">
-                            <fa-icon [icon]="timeIcon"></fa-icon>
-                            <span>10 - 15</span>
-                        </div>
-                    </div>
-                    <ng-template pTemplate="footer">
-                        
-                    </ng-template>
-                    <div class="price">
-                        $4.9
+                        ${{food.price}}
                     </div>
                     <div class="add-to-cart">
                         <fa-icon [icon]="cartIcon"></fa-icon>

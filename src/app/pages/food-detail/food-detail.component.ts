@@ -17,23 +17,23 @@ export class FoodDetailComponent {
 
   images: any[] = [
     {
-      previewImageSrc: '/assets/img/food-4.jpg',
-      thumbnailImageSrc: '/assets/img/food-4.jpg',
+      previewImageSrc: '/assets/food-4.jpg',
+      thumbnailImageSrc: '/assets/food-4.jpg',
       title: 'Title 1'
     },
     {
-      previewImageSrc: '/assets/img/food-5.jpg',
-      thumbnailImageSrc: '/assets/img/food-5.jpg',
+      previewImageSrc: '/assets/food-5.jpg',
+      thumbnailImageSrc: '/assets/food-5.jpg',
       title: 'Title 2'
     },
     {
-      previewImageSrc: '/assets/img/food-6.jpg',
-      thumbnailImageSrc: '/assets/img/food-6.jpg',
+      previewImageSrc: '/assets/food-6.jpg',
+      thumbnailImageSrc: '/assets/food-6.jpg',
       title: 'Title 3'
     },
     {
-      previewImageSrc: '/assets/img/food-1.jpg',
-      thumbnailImageSrc: '/assets/img/food-1.jpg',
+      previewImageSrc: '/assets/food-1.jpg',
+      thumbnailImageSrc: '/assets/food-1.jpg',
       title: 'Title 4'
     }
   ];

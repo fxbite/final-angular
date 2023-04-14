@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
-import {
-  RouterModule,
-  Routes
-} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import { LoginPageComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
@@ -30,7 +27,7 @@ const routes: Routes = [
     title: 'Home'
   },
   {
-    path: 'food-detail',
+    path: 'food-detail/:id',
     component: FoodDetailComponent,
     title: 'Food Detail'
   },
@@ -40,6 +37,8 @@ const routes: Routes = [
     title: 'Basic Form',
     children: []
   },
+  { path: 'menu?search=:searchTerm', component: MenuComponent },
+  { path: 'menu?tag_filter/:tag', component: MenuComponent },
   {
     path: 'cart',
     component: CartComponent,
