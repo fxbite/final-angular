@@ -35,4 +35,5 @@ export class CartComponent {
   checkQuantity(cartItem: CartItem, qty: number) {
     this.cs.changeQuantity(cartItem.food.id, qty);
   }
+  submitOrder() {}
 }

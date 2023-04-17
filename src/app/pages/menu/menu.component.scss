@@ -4,6 +4,7 @@ $defaultColor: #f3f3f3;
   ::ng-deep {
     .p-card {
       height: 100%;
+      cursor: pointer;
       .p-card-header {
         height: 50%;
         padding: 10px;

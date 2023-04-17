@@ -37,14 +37,13 @@ $hoverColor: #4b4c53;
 
     .p-image img {
       object-fit: cover;
-      border-radius: 50%;
+      border-radius: 10px;
       width: 100%;
-      box-shadow: 2px 5px 12px #b5b6ba;
+      box-shadow: 2px 5px 12px #bbb;
     }
 
     .p-image-preview-indicator {
-      border-radius: 50%;
-      width: 100%;
+      border-radius: 10px;
     }
 
     .p-image-preview {
@@ -63,9 +62,7 @@ $hoverColor: #4b4c53;
 }
 
 .container {
-  width: 500px;
   max-width: 90vw;
-  padding-top: 50px;
 
   .item-container {
     border-radius: 5px;
@@ -132,19 +129,37 @@ $hoverColor: #4b4c53;
     }
   }
 
-  .order {
-    margin-top: 10px;
+  button {
+    width: 100%;
+    background-color: $fontColor;
+    color: $whiteColor;
+    font-weight: bold;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    transition: 0.3s ease-in-out;
 
-    button {
-      background-color: $fontColor;
-      width: 100%;
-      color: $whiteColor;
-      font-weight: bold;
-      padding: 10px 15px;
-      border-radius: 5px;
-
-      &:hover {
-        background-color: $hoverColor;
+    span {
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+      &:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+    }
+    
+    &:hover {
+      background-color: $hoverColor;
+      span {
+        padding-right: 1.2rem;
+        &:after {
+          opacity: 1;
+          right: 0;
+        }
       }
     }
   }

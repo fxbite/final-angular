@@ -22,6 +22,7 @@ This project install additionally:
 - multi-lang, food detail
 - create recipe: InputGroup (price), EditorModule (desc)
 - set debounce for btn
+- rating star decimal: https://codepen.io/scottb/pen/KdYgRK
 
 ## Pending features
 

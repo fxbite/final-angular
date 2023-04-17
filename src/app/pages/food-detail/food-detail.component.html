@@ -15,57 +15,51 @@
                             <img [src]="item.thumbnailImageSrc" alt="" [title]="item.title" width=80% />
                         </div>
                     </ng-template>
-
                 </p-galleria>
             </div>
         </div>
 
         <div class="col-md-6">
-            <h1>Food 4</h1>
-
+            <h1>{{ food.name }}</h1>
             <div class="row">
                 <div class="col-md-10">
                     <a href="" class="text-secondary">
                         <h4>By Unknown</h4>
                     </a>
-                    <h4>Origins: ...</h4>
+                    <h4>Origins: <span class="origin" *ngFor="let origin of food.origins;   let last = last">
+                            {{origin}}<span *ngIf="!last">,</span>
+                        </span></h4>
                 </div>
             </div>
             <p class="text-justify">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
                 deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod
                 tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p class="product-description"><i class="pi pi-stopwatch"></i> Cookie time: n/a</p>
-            <p-rating [(ngModel)]="valueS" [cancel]="false"></p-rating>
-
+            <p class="product-description"><i class="pi pi-stopwatch"></i> Cooking time: {{ food.cookTime }} min</p>
+            <p-rating [(ngModel)]="food.stars" [cancel]="false"></p-rating>
+            <!--  iconOnStyle="red" -->
             <div class="my-3">
-                <p><i class="pi pi-tags"></i></p>
-                <p-button label="Snack" styleClass="p-button-secondary"></p-button>
-                <p-button label="Fast Food" styleClass="p-button-secondary"></p-button>
-                <p-button label="Fry" styleClass="p-button-secondary"></p-button>
+                <p-button *ngFor="let tag of food.tags" label="{{ tag }}" styleClass="p-button-secondary"></p-button>
             </div>
 
             <div class="row">
                 <div class="col-4">
-                    <h3>$40.00</h3>
+                    <h3>{{ food.price * value1 | currency }}</h3>
                 </div>
                 <div class="col-4">
                     <p-inputNumber [(ngModel)]="value1" mode="decimal" [showButtons]="true" buttonLayout="horizontal"
-                        [pTooltip]="btnQty" tooltipPosition="bottom" inputId="minmax-buttons"
-                        incrementButtonIcon="pi pi-caret-right" decrementButtonIcon="pi pi-caret-left" [min]="0"
-                        [max]="100">
+                        [pTooltip]="btnQty" tooltipPosition="bottom" incrementButtonIcon="pi pi-caret-right"
+                        decrementButtonIcon="pi pi-caret-left" [min]="1" [max]="100">
                     </p-inputNumber>
                 </div>
             </div>
 
             <div class="my-3">
                 <p-button icon="pi pi-cart-plus" [pTooltip]="btnCart" tooltipPosition="bottom"
-                    styleClass="p-button-raised p-button-warning me-3"></p-button>
-                <p-toggleButton [(ngModel)]="favourite" [onIcon]="'pi pi-heart-fill'"
+                    styleClass="p-button-raised p-button-warning me-3" (click)="addToCart()"></p-button>
+                <p-toggleButton [(ngModel)]="food.favorite" [onIcon]="'pi pi-heart-fill'"
                     [offIcon]="'pi pi-heart'"></p-toggleButton>
             </div>
-
-
         </div>
     </div>
 </div>
