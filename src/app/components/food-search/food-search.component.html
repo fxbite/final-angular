@@ -3,7 +3,8 @@
     <div class="col-12 center-box">
         <span class="p-input-icon-left">
             <i class="pi pi-search"></i>
-            <input type="text" pInputText [(ngModel)]="searchTerm" (keyup.enter)="search($event)" />
+            <input #sf type="text" pInputText (keyup.enter)="search(sf.value)" />
+            <!--  [(ngModel)]="searchTerm" -->
         </span>
         <span class="p-input-icon-right">
             <i class="pi pi-spin pi-spinner"></i>

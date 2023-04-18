@@ -25,8 +25,6 @@ export class LoginPageComponent
   submitted = false;
   user: any;
 
-  // @Output() onSubmit: EventEmitter<any> = new EventEmitter();
-
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
@@ -46,7 +44,6 @@ export class LoginPageComponent
       ])
     });
 
-    // this.auth.currentUser.subscribe((data) => (this.user = data));
   }
 
   onSubmit() {
@@ -57,34 +54,8 @@ export class LoginPageComponent
     }
 
     this.ts.subject$.next('login');
-    // For call api login & Store token to localStorage
-    // this.accountServices.login(this.loginForm.value).subscribe({
-    //   next: (res: any) => {
-    //     this.user = res.result;
-    //     this.accountServices.storeToken(res.result.token);
-    //     this.accountServices.storeIdUser(res.result.user.id);
-    //   },
-    //   complete: () => {
-    //     message...
-    //     const event = {
-    //       name: 'logout',
-    //       isLogout: false,
-    //       user: this.user,
-    //     };
-    //     this.eventManager.broadcast(event);
-    //     this.auth.changeUser(this.user);
+ 
     this.router.navigate(['/home']);
-    //   },
-    //   error: (err) => {
-    //     this.messageService.add({
-    //       key: 'error',
-    //       severity: 'error',
-    //       summary: 'Fail',
-    //       detail: `Login Fail. ${err.error.message}`,
-    //       life: 2000,
-    //     });
-    //   },
-    // });
   }
 
   submit() {
@@ -92,9 +63,5 @@ export class LoginPageComponent
     if (this.loginForm.invalid) return;
     console.log(this.loginForm.value);
 
-    // this.userService.login({email:this.fc.email.value,
-    //    password: this.fc.password.value}).subscribe(() => {
-    //      this.router.navigateByUrl(this.returnUrl);
-    //    });
   }
 }

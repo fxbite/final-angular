@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import { LoginPageComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FoodDetailComponent } from './pages/food-detail/food-detail.component';
 import { CartComponent } from './pages/cart/cart.component';
@@ -20,6 +21,11 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent,
     title: 'Register'
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    title: 'User Profile'
   },
   {
     path: 'home',

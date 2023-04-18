@@ -9,11 +9,9 @@ import { ToastService } from 'src/app/services/toast.service';
 })
 export class InfoOrderComponent {
   value!: string;
+  orderTime = new Date();
 
-  constructor(
-    private router: Router,
-    private ts: ToastService
-  ) {}
+  constructor(private router: Router, private ts: ToastService) {}
 
   confirm() {
     this.router.navigate(['/home']);

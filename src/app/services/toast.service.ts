@@ -15,7 +15,6 @@ export class ToastService {
       key: 'login',
       severity: 'success',
       summary: 'Login Successful',
-      detail: '',
       life: 2000
     });
   }
@@ -24,7 +23,6 @@ export class ToastService {
       key: 'register',
       severity: 'success',
       summary: 'Register Successful',
-      detail: '',
       life: 3000
     });
   }

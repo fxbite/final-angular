@@ -20,8 +20,9 @@ export class FoodSearchComponent {
     this.tags = fs.getSampleTag();
   }
 
-  search(event: any) {
-    let term = event.target.value;
+  // search(event: any) {
+  //   let term = event.target.value;
+  search(term: string): void {
     if (term) this.router.navigateByUrl('/menu?search=' + term);
   }
   ngOnInit() {}

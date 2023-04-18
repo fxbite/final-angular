@@ -1,6 +1,6 @@
 :host {
   .screen-bg {
-    background: url("/assets/extra_img/landing-bg.jpeg") center no-repeat;
+    background: url('/assets/extra_img/landing-bg.jpeg') center no-repeat;
     background-size: cover;
     // filter: blur(2px);
     height: 100vh;
@@ -35,6 +35,28 @@
         color: green;
         width: 100%;
       }
+    }
+
+    .separator {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding: 0.3rem 0.5rem;
+    }
+
+    .separator::before,
+    .separator::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid #000;
+    }
+
+    .separator:not(:empty)::before {
+      margin-right: 0.25rem;
+    }
+
+    .separator:not(:empty)::after {
+      margin-left: 0.25rem;
     }
   }
 }
