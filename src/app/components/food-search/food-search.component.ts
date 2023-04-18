@@ -17,7 +17,7 @@ export class FoodSearchComponent {
     ac.params.subscribe((params) => {
       if (params['searchTerm']) this.searchTerm = params['searchTerm'];
     });
-    this.tags = fs.getSampleTag();
+    // this.tags = fs.getSampleTag();
   }
 
   // search(event: any) {
