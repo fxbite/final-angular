@@ -79,6 +79,8 @@ import { CartComponent } from './pages/cart/cart.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { OrderComponent } from './pages/order/order.component';
 import { FoodSearchComponent } from './components/food-search/food-search.component';
+import { InfoOrderComponent } from './components/info-order/info-order.component';
+import { ListOrderComponent } from './components/list-order/list-order.component';
 
 const PRIMENG_DEPENDENCIES = [
   ButtonModule,
@@ -145,7 +147,9 @@ const PRIMENG_DEPENDENCIES = [
     CartComponent,
     MenuComponent,
     OrderComponent,
-    FoodSearchComponent
+    FoodSearchComponent,
+    InfoOrderComponent,
+    ListOrderComponent,
   ],
   imports: [
     BrowserModule,

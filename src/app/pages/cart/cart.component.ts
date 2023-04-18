@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { faStar, faClock, faXmark, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { CartService } from 'src/app/services/cart.service';
 import { Cart } from 'src/app/shared/models/Cart';
@@ -19,8 +20,9 @@ export class CartComponent {
   quantity: number = 1;
   price: number = 5;
   cart!: Cart;
+  orderId: string = 'jgL3Wf5gCH';
 
-  constructor(private cs: CartService) {
+  constructor(private cs: CartService, private router: Router) {
     this.cs.getCartObservable().subscribe((cart) => {
       this.cart = cart;
     });
@@ -35,5 +37,7 @@ export class CartComponent {
   checkQuantity(cartItem: CartItem, qty: number) {
     this.cs.changeQuantity(cartItem.food.id, qty);
   }
-  submitOrder() {}
+  submitOrder() {
+    this.router.navigate(['/order', this.orderId]);
+  }
 }
