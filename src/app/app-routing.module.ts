@@ -8,45 +8,28 @@ import { FoodDetailComponent } from './pages/food-detail/food-detail.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { OrderComponent } from './pages/order/order.component';
 import { MenuComponent } from './pages/menu/menu.component';
-// , canActivate: [AuthGuard]
+
 const routes: Routes = [
-  { path: '', component: LoginPageComponent },
   {
     path: 'login',
     component: LoginPageComponent,
-    title: 'Login'
+    title: 'Login | Fsoft Food'
   },
   {
     path: 'register',
     component: RegisterComponent,
-    title: 'Register'
+    title: 'Register | Fsoft Food'
   },
   {
     path: 'home',
     component: HomeComponent,
-    title: 'Home'
-  },
-  {
-    path: 'menu',
-    component: MenuComponent,
-    title: 'Basic Form',
-    children: [
-      {
-        path: 'food-detail',
-        component: FoodDetailComponent,
-        title: 'Food Detail'
-      }
-    ]
+    title: 'Home | Fsoft Food',
+    canActivate: [AuthGuard]
   },
   {
     path: 'cart',
     component: CartComponent,
-    title: 'Cart'
-  },
-  {
-    path: 'order/:slug',
-    component: OrderComponent,
-    title: 'Order'
+    title: 'Cart | Fsoft Food'
   }
   // addition:
   // { path: '**', component: PageNotFoundComponent },

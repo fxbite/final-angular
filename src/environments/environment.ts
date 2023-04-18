@@ -9,9 +9,11 @@ export const environment = {
   USER_LOGIN_URL: '/api/users/login',
   USER_REGISTER_URL: '/api/users/register',
 
-  ORDERS_URL: '/api/orders',
   ORDER_CREATE_URL: '/api/orders/create',
-  ORDER_NEW_FOR_CURRENT_USER_URL: '/api/orders/newOrderForCurrentUser',
-  ORDER_PAY_URL: '/api/orders/pay',
-  ORDER_TRACK_URL: '/api/orders/track/'
+  ORDER_TRACK_URL: '/api/orders/track/',
+  ORDER_HISTORY_URL: '/api/history/'
+
+  // ORDERS_URL: '/api/orders',
+  // ORDER_NEW_FOR_CURRENT_USER_URL: '/api/orders/newOrderForCurrentUser',
+  // ORDER_PAY_URL: '/api/orders/pay',
 };

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastService } from './services/toast.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -9,22 +10,11 @@ import { ToastService } from './services/toast.service';
 export class AppComponent implements OnInit {
   title = 'frontend';
 
-  constructor(private ts: ToastService) {}
+  constructor(private ts: ToastService, private ms: MessageService) {}
 
-  ngOnInit(): void {
-    this.ts.subject$.subscribe((res) => {
-      if (res === 'login') {
-        this.ts.showLogin();
-      } else if (res === 'register') {
-        this.ts.showRegister();
-      } else if (res === 'itemToCart') {
-        this.ts.showAddToCart();
-      } else if (res === 'order') {
-        this.ts.showOrder();
-      }
+  ngOnInit() {
+    this.ts.toastSubject.subscribe((message) => {
+      this.ms.add(message);
     });
   }
-  // avoid if else by declaring func getStatusMess(key: string) {
-  //
-  // }
 }

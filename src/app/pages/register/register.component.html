@@ -5,7 +5,7 @@
             <h2>Registering</h2>
         </div>
 
-        <form class="center-all gap-2" [formGroup]="registerForm" (ngSubmit)="register()">
+        <form class="center-all gap-2" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <div class="col-12 my-2">
                 <span class="p-float-label">
                     <input type="text" pInputText id="name" formControlName="name">

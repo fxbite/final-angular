@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ToastService } from 'src/app/services/toast.service';
-import { UserService } from 'src/app/services/user.service';
-import { PasswordsMatchValidator } from 'src/app/shared/validators/password_match_validator';
+import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
+import { PasswordsMatchValidator } from '../../shared/validators/password_match_validator';
 
 @Component({
   selector: 'app-register',
@@ -12,19 +11,11 @@ import { PasswordsMatchValidator } from 'src/app/shared/validators/password_matc
 })
 export class RegisterComponent {
   registerForm!: FormGroup;
-  isSubmitted = false;
-  returnUrl = '';
   submitted = false;
-  user: any;
-  constructor(
-    private fb: FormBuilder,
-    private userService: UserService,
-    private ar: ActivatedRoute,
-    private router: Router,
-    private ts: ToastService
-  ) {}
 
-  ngOnInit(): void {
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {}
+
+  ngOnInit() {
     this.registerForm = this.fb.group(
       {
         name: this.fb.control('', [Validators.required]),
@@ -39,12 +30,17 @@ export class RegisterComponent {
     );
   }
 
-  register() {
-    this.isSubmitted = true;
-    this.submitted = true; //addition
+  onSubmit() {
+    this.submitted = true;
     if (this.registerForm.invalid) return;
-    console.log(this.registerForm.value);
-    this.ts.subject$.next('register');
-    this.router.navigate(['/login']);
+    this.userService.register({
+      name: this.registerForm.get('name')?.value,
+      email: this.registerForm.get('email')?.value,
+      password: this.registerForm.get('password')?.value,
+      confirmPassword: this.registerForm.get('confirmPassword')?.value,
+      address: this.registerForm.get('address')?.value
+    }).subscribe(() => {
+      this.router.navigate(['/login'])
+    })
   }
 }

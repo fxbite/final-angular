@@ -1,51 +1,72 @@
 import { Injectable } from '@angular/core';
-import { MessageService } from 'primeng/api';
+import { Message } from 'primeng/api';
 import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ToastService {
-  subject$ = new Subject();
+  toastSubject = new Subject<Message>();
 
-  constructor(private ms: MessageService) {}
+  constructor() {}
 
-  showLogin() {
-    this.ms.add({
-      key: 'login',
-      severity: 'success',
-      summary: 'Login Successful',
-      detail: '',
-      life: 2000
-    });
+  getToast(message: Message) {
+    this.toastSubject.next(message);
   }
-  showRegister() {
-    this.ms.add({
-      key: 'register',
-      severity: 'success',
-      summary: 'Register Successful',
-      detail: '',
+
+  showLogin(option: 'success' | 'failed') {
+    let message: Message = {
+      life: 10000
+    };
+    if (option === 'success') {
+      message['severity'] = 'success';
+      message['summary'] = 'Login Successful';
+    } else {
+      message['severity'] = 'error';
+      message['summary'] = 'Login Failed';
+    }
+    return message;
+  }
+
+  showRegister(option: 'success' | 'failed') {
+    let message: Message = {
       life: 3000
-    });
+    };
+    if (option === 'success') {
+      message['severity'] = 'success';
+      message['summary'] = 'Register Successful';
+    } else {
+      message['severity'] = 'error';
+      message['summary'] = 'Register error';
+    }
+    return message;
   }
 
-  showAddToCart() {
-    this.ms.add({
-      key: 'itemToCart',
-      severity: 'info',
-      summary: 'Item to Cart',
-      detail: `@food added to cart!`,
+  showAddToCart(option: 'success' | 'failed') {
+    let message: Message = {
       life: 2000
-    });
+    };
+    if (option === 'success') {
+      message['severity'] = 'info' 
+      message['summary'] = 'Added to cart'
+    } else {
+      message['severity'] = 'warn';
+      message['summary'] = 'Not add to cart';
+    }
+    return message;
   }
 
-  showOrder() {
-    this.ms.add({
-      key: 'order',
-      severity: 'info',
-      summary: 'Order Confirmed',
-      detail: `@order has been submitted!`,
+  showOrder(option: 'success' | 'failed') {
+    let message: Message = {
       life: 2000
-    });
+    }
+    if (option === 'success') {
+      message['severity'] = 'success';
+      message['summary'] = 'Order Confirmed';
+    } else {
+      message['severity'] = 'error'
+      message['summary'] = 'Order Rejected'
+    }
+    return message;
   }
 }

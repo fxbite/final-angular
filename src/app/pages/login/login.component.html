@@ -7,7 +7,7 @@
         Please enter your email and password
       </p>
       <!-- Form Login -->
-      <form [formGroup]="loginForm" (ngSubmit)="submit()">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="col-12 my-2 mt-4">
           <span class="p-float-label">
             <input id="email" type="email" pInputText formControlName="email" />
@@ -48,7 +48,7 @@
             now! </a><br>
           > <a href="#!">Forgot password?</a>
         </p>
-        <p-button label="Login" styleClass="p-button-success" type="button" (click)="onSubmit()"></p-button>
+        <p-button label="Login" styleClass="p-button-success" type="submit"></p-button>
         <!-- consider use type="submit" instead onSubmit-->
         <!-- <hr>
         <p-button label="Login with google" icon="pi pi-google" styleClass="p-button-danger" type="submit"></p-button>

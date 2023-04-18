@@ -13,10 +13,10 @@ export class LocationService {
       if (!navigator.geolocation) return;
 
       return navigator.geolocation.getCurrentPosition(
-        (pos) => {
+        (position) => {
           observer.next({
-            lat: pos.coords.latitude,
-            lng: pos.coords.longitude
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
           });
           observer.complete();
         },

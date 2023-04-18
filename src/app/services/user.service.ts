@@ -1,24 +1,25 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
-// import { USER_LOGIN_URL, USER_REGISTER_URL } from '../shared/constants/urls';
 import { IUserLogin } from '../shared/interfaces/IUserLogin';
 import { IUserRegister } from '../shared/interfaces/IUserRegister';
 import { User } from '../shared/models/User';
 import { environment } from 'src/environments/environment';
+import { ToastService } from './toast.service';
 
-const USER_KEY = 'User';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  private USER_KEY = 'User';
   private userSubject = new BehaviorSubject<User>(this.getUserFromLocalStorage());
   public userObservable: Observable<User>;
-  constructor(private http: HttpClient) {
+
+  constructor(private http: HttpClient, private toastService: ToastService) {
     this.userObservable = this.userSubject.asObservable();
   }
 
-  public get currentUser(): User {
+  public getCurrentUser(): User {
     return this.userSubject.value;
   }
 
@@ -28,32 +29,23 @@ export class UserService {
         next: (user) => {
           this.setUserToLocalStorage(user);
           this.userSubject.next(user);
-          // this.toastrService.success(
-          //   `Welcome to Foodmine ${user.name}!`,
-          //   'Login Successful'
-          // )
+          this.toastService.getToast(this.toastService.showLogin('success'));
         },
         error: (errorResponse) => {
-          // this.toastrService.error(errorResponse.error, 'Login Failed');
+          this.toastService.getToast(this.toastService.showLogin('failed'));
         }
       })
     );
   }
 
-  register(userRegiser: IUserRegister): Observable<User> {
+  register(userRegiser: IUserRegister) {
     return this.http.post<User>(environment.USER_REGISTER_URL, userRegiser).pipe(
       tap({
         next: (user) => {
-          this.setUserToLocalStorage(user);
-          this.userSubject.next(user);
-          // this.toastrService.success(
-          //   `Welcome to the Foodmine ${user.name}`,
-          //   'Register Successful'
-          // )
+          this.toastService.getToast(this.toastService.showRegister('success'));
         },
         error: (errorResponse) => {
-          // this.toastrService.error(errorResponse.error,
-          //   'Register Failed')
+          this.toastService.getToast(this.toastService.showRegister('failed'));
         }
       })
     );
@@ -61,16 +53,16 @@ export class UserService {
 
   logout() {
     this.userSubject.next(new User());
-    localStorage.removeItem(USER_KEY);
+    localStorage.removeItem(this.USER_KEY);
     window.location.reload();
   }
 
   private setUserToLocalStorage(user: User) {
-    localStorage.setItem(USER_KEY, JSON.stringify(user));
+    localStorage.setItem(this.USER_KEY, JSON.stringify(user));
   }
 
   private getUserFromLocalStorage(): User {
-    const userJson = localStorage.getItem(USER_KEY);
+    const userJson = localStorage.getItem(this.USER_KEY);
     if (userJson) return JSON.parse(userJson) as User;
     return new User();
   }

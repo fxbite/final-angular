@@ -3,7 +3,7 @@
     <div class="item-container">
         <div class="item">
             <div class="photo">
-                <p-image src="/assets/img/food-1.jpg" alt="Image" [preview]="true"></p-image>
+                <p-image src="/assets/food-1.jpg" alt="Image" [preview]="true"></p-image>
             </div>
             <div class="description">
                 <span class="name">Pizza Pepperoni</span>
@@ -21,7 +21,7 @@
                 </span>
                 <span class="price">${{price * quantity}}</span>
                 <span class="quantity">
-                    <p-inputNumber [(ngModel)]="quantity" mode="decimal" [showButtons]="true" inputId="minmax-buttons" [min]="0"> </p-inputNumber>
+                    <p-inputNumber [(ngModel)]="quantity" mode="decimal" [showButtons]="true" inputId="minmax-buttons" [min]="0" [max]="100"> </p-inputNumber>
                 </span>
             </div>
             <div class="remove-item">
