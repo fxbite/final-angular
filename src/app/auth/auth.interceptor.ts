@@ -12,7 +12,7 @@ export class AuthInterceptor implements HttpInterceptor {
     if (user.access_token) {
       request = request.clone({
         setHeaders: {
-          access_token: user.access_token
+          Authorization: `Bearer ${user.access_token}`
         }
       });
     }

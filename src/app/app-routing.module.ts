@@ -48,6 +48,11 @@ const routes: Routes = [
     path: 'cart',
     component: CartComponent,
     title: 'Cart | Fsoft Food'
+  },
+  {
+    path: 'order/:slug',
+    component: OrderComponent,
+    title: 'Order | Fsoft Food'
   }
   // addition:
   // orderConfirm
