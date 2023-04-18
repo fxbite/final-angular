@@ -9,3 +9,8 @@ export interface IFood {
   imageUrl: string;
   tags: string[];
 }
+
+export interface IFoodTag {
+  name: string;
+  count: number;
+}
