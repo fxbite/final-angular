@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faStar, faCartPlus, faStopwatch } from '@fortawesome/free-solid-svg-icons';
-import { FoodService } from 'src/app/services/food.service';
-import { IFood } from 'src/app/shared/interfaces/IFood';
+import { FoodService } from '../../services/food.service';
+import { IFood } from '../../shared/interfaces/IFood';
 
 @Component({
   selector: 'app-menu',
