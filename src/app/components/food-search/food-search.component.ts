@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FoodService } from 'src/app/services/food.service';
-import { IFoodTag } from '../../shared/interfaces/IFood';
+import { FoodService } from '../../services/food.service';
+import { IFood } from '../../shared/interfaces/IFood';
 
 @Component({
   selector: 'app-food-search',
@@ -10,15 +10,28 @@ import { IFoodTag } from '../../shared/interfaces/IFood';
 })
 export class FoodSearchComponent {
   searchTerm!: string;
-  tags?: IFoodTag[];
+  tags?: IFood[];
   value2!: string;
 
-  constructor(private router: Router, fs: FoodService) {}
+  constructor(private router: Router, private fs: FoodService) {}
 
   // search(event: any) {
   //   let term = event.target.value;
   search(term: string): void {
     if (term) this.router.navigateByUrl('/menu?search=' + term);
   }
-  ngOnInit() {}
+
+  private showTags() {
+    this.fs.getAllTags().subscribe((value) => {
+      this.tags = value;
+    });
+  }
+  // private filterByTag() {
+  //   this.fs.getFoodsByTag().subscribe((value) => {
+  //     this.tags = value;
+  //   });
+  // }
+  ngOnInit() {
+    this.showTags();
+  }
 }

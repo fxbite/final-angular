@@ -11,9 +11,10 @@
             <input type="text" pInputText [(ngModel)]="value2" />
         </span>
     </div>
-    <!-- Tag Filter  -->
+    <!-- Tag Filter : ({{tag.count}})  -->
     <div class="col-12 center-box" *ngIf="tags">
-        <p-button *ngFor="let tag of tags" label="{{tag.name}}({{tag.count}})" styleClass="p-button-secondary me-3"
+        <p-button *ngFor="let tag of tags" label="{{tag.name}}" styleClass="p-button-secondary me-3"
             [routerLink]="['/menu?tag_filter', tag.name]"></p-button>
+            <!--  (click)="filterByTag()" -->
     </div>
 </div>

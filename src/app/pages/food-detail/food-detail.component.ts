@@ -50,7 +50,7 @@ export class FoodDetailComponent {
     private router: Router
   ) {
     ac.params.subscribe((params) => {
-      // if (params['id']) this.food = foodService.getFoodById(params['id']);
+      if (params['id']) this.food = foodService.getFoodById(params['id']);
     });
   }
 
