@@ -1,1 +1,22 @@
-<p>list-order works!</p>
+<div class="container p-1 mt-3 overflow-scroll">
+    <div class="row">
+        <!-- <p-table [value]="customers" [scrollable]="true" scrollHeight="400px" [virtualScroll]="true" [virtualScrollItemSize]="50" [lazy]="true" (onLazyLoad)="loadCarsLazy($event)"></p-table> -->
+        <div class="col-12" *ngFor="let item of cart.items">
+            <div class="item-container my-2">
+                <div class="item">
+                        <p-image [src]="item.food.imageUrl" alt="Image" [preview]="true"></p-image>
+                    <div class="description">
+                        <span class="name">{{item.food.name}}</span>
+                        <span class="price">$ {{item.totalItemPrice}}</span>
+                        <span class="quantity">
+                            <p-inputNumber [(ngModel)]="item.itemQty" mode="decimal" [showButtons]="true"
+                                inputId="minmax-buttons" [min]="1" [max]="100"> </p-inputNumber>
+                        </span>
+                    </div>
+                    <p-button icon="pi pi-trash" styleClass="p-button-secondary del-btn"
+                        (click)="deleteItem(item)"></p-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

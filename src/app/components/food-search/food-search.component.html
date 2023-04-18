@@ -1,0 +1,19 @@
+<div class="row gy-3">
+    <!-- Search Input -->
+    <div class="col-12 center-box">
+        <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input #sf type="text" pInputText (keyup.enter)="search(sf.value)" />
+            <!--  [(ngModel)]="searchTerm" -->
+        </span>
+        <span class="p-input-icon-right">
+            <i class="pi pi-spin pi-spinner"></i>
+            <input type="text" pInputText [(ngModel)]="value2" />
+        </span>
+    </div>
+    <!-- Tag Filter  -->
+    <div class="col-12 center-box" *ngIf="tags">
+        <p-button *ngFor="let tag of tags" label="{{tag.name}}({{tag.count}})" styleClass="p-button-secondary me-3"
+            [routerLink]="['/menu?tag_filter', tag.name]"></p-button>
+    </div>
+</div>

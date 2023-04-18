@@ -9,3 +9,8 @@ export class Food {
   imageUrl!: string;
   tags!: string[];
 }
+
+export class FoodTag {
+  name!: string;
+  count!: number;
+}

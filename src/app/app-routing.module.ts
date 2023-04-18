@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import { LoginPageComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FoodDetailComponent } from './pages/food-detail/food-detail.component';
 import { CartComponent } from './pages/cart/cart.component';
@@ -21,17 +22,35 @@ const routes: Routes = [
     title: 'Register | Fsoft Food'
   },
   {
+    path: 'profile',
+    component: ProfileComponent,
+    title: 'User Profile'
+  },
+  {
     path: 'home',
     component: HomeComponent,
-    title: 'Home | Fsoft Food',
-    canActivate: [AuthGuard]
+    title: 'Home'
   },
+  {
+    path: 'food-detail/:id',
+    component: FoodDetailComponent,
+    title: 'Food Detail'
+  },
+  {
+    path: 'menu',
+    component: MenuComponent,
+    title: 'Basic Form',
+    children: []
+  },
+  { path: 'menu?search=:searchTerm', component: MenuComponent },
+  { path: 'menu?tag_filter/:tag', component: MenuComponent },
   {
     path: 'cart',
     component: CartComponent,
     title: 'Cart | Fsoft Food'
   }
   // addition:
+  // orderConfirm
   // { path: '**', component: PageNotFoundComponent },
 ];
 

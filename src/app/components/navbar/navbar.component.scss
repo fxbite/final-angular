@@ -1,10 +1,5 @@
 .gradient-nav {
-  background: linear-gradient(
-    135deg,
-    aliceblue,
-    rgba(211, 210, 254, 0.3),
-    #eae5f588
-  );
+  background: linear-gradient(135deg, aliceblue, rgba(211, 210, 254, 0.3), #eae5f588);
   .nav-link {
     color: #333;
   }
@@ -14,4 +9,14 @@
     rgba($color: aliceblue, $alpha: 0.7),
     rgba($color: lightgrey, $alpha: 0.6)
   );
+}
+
+:host {
+  ::ng-deep {
+    .p-badge {
+      font-size: 0.7rem !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  }
 }

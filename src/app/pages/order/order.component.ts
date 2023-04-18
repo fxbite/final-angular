@@ -8,6 +8,7 @@ import { LocationService } from 'src/app/services/location.service';
   styleUrls: ['./order.component.scss']
 })
 export class OrderComponent implements OnInit {
+<<<<<<< HEAD
   defaultLocation = {
     latitude: 10.803349336834533,
     longitude: 106.65275557054262
@@ -39,5 +40,25 @@ export class OrderComponent implements OnInit {
 
       L.marker([latitude, longitude], { icon }).addTo(map).bindPopup('Your current location').openPopup();
     });
+=======
+  ngOnInit() {
+    const map = L.map('map').setView([10.803349336834533, 106.65275557054262], 13);
+    const icon = new L.Icon({
+      iconUrl: '/assets/img/marker.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 5]
+    });
+
+    L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}', {
+      attribution: 'Intern Greenwich',
+      maxZoom: 20,
+      subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    }).addTo(map);
+
+    L.marker([10.803349336834533, 106.65275557054262], { icon })
+      .addTo(map)
+      .bindPopup('Your current location')
+      .openPopup();
+>>>>>>> dev-shidoru
   }
 }
