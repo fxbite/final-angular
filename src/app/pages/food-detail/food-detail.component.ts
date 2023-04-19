@@ -43,12 +43,7 @@ export class FoodDetailComponent {
     }
   ];
 
-  constructor(
-    ac: ActivatedRoute,
-    foodService: FoodService,
-    private cs: CartService,
-    private router: Router
-  ) {
+  constructor(ac: ActivatedRoute, foodService: FoodService, private cs: CartService, private router: Router) {
     ac.params.subscribe((params) => {
       // if (params['id']) this.food = foodService.getFoodById(params['id']);
     });

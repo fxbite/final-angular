@@ -145,7 +145,7 @@ const PRIMENG_DEPENDENCIES = [
     FoodSearchComponent,
     InfoOrderComponent,
     ListOrderComponent,
-    ProfileComponent,
+    ProfileComponent
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, ...PRIMENG_DEPENDENCIES],
   exports: [...PRIMENG_DEPENDENCIES],

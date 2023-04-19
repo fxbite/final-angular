@@ -10,13 +10,3 @@
     rgba($color: lightgrey, $alpha: 0.6)
   );
 }
-
-:host {
-  ::ng-deep {
-    .p-badge {
-      font-size: 0.7rem !important;
-      padding: 0 !important;
-      margin: 0 !important;
-    }
-  }
-}

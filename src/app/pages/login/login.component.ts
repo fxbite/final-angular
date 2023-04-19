@@ -24,12 +24,13 @@ export class LoginPageComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     if (this.loginForm.invalid) return;
-    this.userService.login({
-      email: this.loginForm.get('email')?.value,
-      password: this.loginForm.get('password')?.value
-    }).subscribe(() => {
-      this.router.navigate(['/home']);
-    })
-    
+    this.userService
+      .login({
+        email: this.loginForm.get('email')?.value,
+        password: this.loginForm.get('password')?.value
+      })
+      .subscribe(() => {
+        this.router.navigate(['/home']);
+      });
   }
 }

@@ -10,6 +10,7 @@ import { Food } from '../shared/models/Food';
 export class CartService {
   private cart: Cart = this.getCartFromLocalStorage();
   private sub: BehaviorSubject<Cart> = new BehaviorSubject(this.cart);
+
   constructor() {}
 
   private getCartFromLocalStorage(): Cart {
@@ -20,7 +21,6 @@ export class CartService {
   addToCart(food: Food): void {
     let cartItem = this.cart.items.find((item) => item.food.id === food.id);
     if (cartItem) return;
-
     this.cart.items.push(new CartItem(food));
     this.setCartToLocalStorage();
   }
@@ -49,12 +49,8 @@ export class CartService {
   }
 
   private setCartToLocalStorage(): void {
-    this.cart.totalPrice = this.cart.items.reduce(
-      (prevSum, curItem) => prevSum + curItem.totalItemPrice,
-      0
-    );
+    this.cart.totalPrice = this.cart.items.reduce((prevSum, curItem) => prevSum + curItem.totalItemPrice, 0);
     this.cart.totalQty = this.cart.items.reduce((prevSum, curItem) => prevSum + curItem.itemQty, 0);
-
     const cartJson = JSON.stringify(this.cart);
     localStorage.setItem('Cart', cartJson);
     this.sub.next(this.cart);

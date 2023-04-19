@@ -8,7 +8,7 @@ import { ToastService } from 'src/app/services/toast.service';
   styleUrls: ['./info-order.component.scss']
 })
 export class InfoOrderComponent {
-  value!: string;
+  value: string = '';
   orderTime = new Date();
 
   constructor(private router: Router, private ts: ToastService) {}

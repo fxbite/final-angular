@@ -47,8 +47,8 @@ export class ToastService {
       life: 2000
     };
     if (option === 'success') {
-      message['severity'] = 'info' 
-      message['summary'] = 'Added to cart'
+      message['severity'] = 'info';
+      message['summary'] = 'Added to cart';
     } else {
       message['severity'] = 'warn';
       message['summary'] = 'Not add to cart';
@@ -59,13 +59,13 @@ export class ToastService {
   showOrder(option: 'success' | 'failed') {
     let message: Message = {
       life: 2000
-    }
+    };
     if (option === 'success') {
       message['severity'] = 'success';
       message['summary'] = 'Order Confirmed';
     } else {
-      message['severity'] = 'error'
-      message['summary'] = 'Order Rejected'
+      message['severity'] = 'error';
+      message['summary'] = 'Order Rejected';
     }
     return message;
   }
