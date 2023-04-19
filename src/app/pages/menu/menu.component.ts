@@ -18,11 +18,23 @@ export class MenuComponent implements OnInit {
   food!: IFood[];
 
   constructor(private fs: FoodService, ac: ActivatedRoute) {
-      ac.params.subscribe((params) => {
-        // if (params['searchTerm']) this.foods = this.fs.searchFood(params['searchTerm']);
-        // else if (params['tag']) this.foods = this.fs.filterFoodByTag(params['tag']);
-        // else this.foods = fs.getSampleFood();
-      });
+    ac.params.subscribe((params) => {
+      if (params['searchTerm']) {
+        this.fs.searchFoods(params['searchTerm']).subscribe((data) => {
+          this.food = data;
+        });
+      }
+      if (params['tag']) {
+        this.fs.getFoodsByTag(params['tag']).subscribe((data) => {
+          this.food = data;
+        });
+      }
+      if (params['tag'] === 'All') {
+        this.fs.getFoods().subscribe((data) => {
+          this.food = data;
+        });
+      }
+    });
   }
 
   ngOnInit() {

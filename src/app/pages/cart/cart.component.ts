@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { faStar, faClock, faXmark, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
-import { CartService } from 'src/app/services/cart.service';
-import { Cart } from 'src/app/shared/models/Cart';
-import { CartItem } from 'src/app/shared/models/CartItem';
+import { CartService } from '../../services/cart.service';
+import { Cart } from '../../shared/models/Cart';
+import { CartItem } from '../../shared/models/CartItem';
 
 @Component({
   selector: 'app-cart',

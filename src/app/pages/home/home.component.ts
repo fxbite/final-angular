@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { faHandshake, faHouseFlag, faTruckFast, faCalendarCheck, faClipboardCheck, faTicket } from '@fortawesome/free-solid-svg-icons';
 import { FoodService } from '../../services/food.service';
 import { IFood } from '../../shared/interfaces/IFood';
-import { Food } from 'src/app/shared/models/Food';
+import { Food } from '../../shared/models/Food';
 
 @Component({
   selector: 'app-home',
