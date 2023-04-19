@@ -26,6 +26,6 @@ export class FoodService {
   }
 
   getFoodById(foodId: string) {
-    return this.http.get<IFood[]>(`${environment.FOOD_BY_ID_URL}${foodId}`);
+    return this.http.get<IFood>(`${environment.FOOD_BY_ID_URL}${foodId}`);
   }
 }

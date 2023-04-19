@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
-import { CartService } from 'src/app/services/cart.service';
-import { FoodService } from 'src/app/services/food.service';
-import { Food } from 'src/app/shared/models/Food';
+import { CartService } from '../../services/cart.service';
+import { FoodService } from '../../services/food.service';
+import { IFood } from '../../shared/interfaces/IFood';
+import { Food } from '../../shared/models/Food';
 
 @Component({
   selector: 'app-food-detail',
@@ -14,12 +15,12 @@ export class FoodDetailComponent {
   value1: number = 10;
   valueS!: number;
   favourite: boolean = false;
-  food!: Food;
+  food!: IFood;
 
   faAddCart = faCartPlus;
   btnCart = 'Add to Cart';
   btnQty = 'Quantity';
-
+  
   images: any[] = [
     {
       previewImageSrc: '/assets/food-4.jpg',
@@ -43,17 +44,16 @@ export class FoodDetailComponent {
     }
   ];
 
-  constructor(
-    ac: ActivatedRoute,
-    foodService: FoodService,
-    private cs: CartService,
-    private router: Router
-  ) {
+  constructor(ac: ActivatedRoute, private fs: FoodService, private cs: CartService, private router: Router) {
     ac.params.subscribe((params) => {
-      if (params['id']) this.food = foodService.getFoodById(params['id']);
+      if (params['id']) {
+        this.fs.getFoodById(params['id']).subscribe(data => {
+            this.food = data
+        })
+      }
     });
   }
-
+  
   addToCart() {
     this.cs.addToCart(this.food);
     this.router.navigateByUrl('/cart');

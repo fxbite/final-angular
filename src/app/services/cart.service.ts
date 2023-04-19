@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Cart } from '../shared/models/Cart';
 import { CartItem } from '../shared/models/CartItem';
-import { Food } from '../shared/models/Food';
+// import { Food } from '../shared/models/Food';
+import { IFood } from '../shared/interfaces/IFood';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class CartService {
     return cartJson ? JSON.parse(cartJson) : new Cart();
   }
 
-  addToCart(food: Food): void {
+  addToCart(food: IFood): void {
     let cartItem = this.cart.items.find((item) => item.food.id === food.id);
     if (cartItem) return;
 
