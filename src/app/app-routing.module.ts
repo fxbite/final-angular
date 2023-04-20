@@ -9,6 +9,7 @@ import { FoodDetailComponent } from './pages/food-detail/food-detail.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { OrderComponent } from './pages/order/order.component';
 import { MenuComponent } from './pages/menu/menu.component';
+import { OrderConfirmComponent } from './pages/order-confirm/order-confirm.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
@@ -55,8 +56,7 @@ const routes: Routes = [
     component: OrderComponent,
     title: 'Order | Fsoft Food'
   },
-  // addition:
-  // orderConfirm
+  { path: 'order-confirm', component: OrderConfirmComponent, title: 'Order Confirm | Fsoft Food' },
   { path: '**', component: NotFoundComponent, title: 'E404 | Fsoft Food' }
 ];
 
