@@ -1,9 +1,8 @@
 export interface IFoodOrder {
   orderId: string;
-  user: string; // string[]
+  user: string;
   totalPrice: number;
   address: string;
   orderTime: string;
-  status: string;
   userNote: string;
 }
