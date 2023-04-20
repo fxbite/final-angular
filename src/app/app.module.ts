@@ -149,7 +149,7 @@ const PRIMENG_DEPENDENCIES = [
     ListOrderComponent,
     ProfileComponent,
     NotFoundComponent,
-    OrderConfirmComponent,
+    OrderConfirmComponent
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, ...PRIMENG_DEPENDENCIES],
   exports: [...PRIMENG_DEPENDENCIES],
