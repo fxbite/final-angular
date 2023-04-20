@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { faClock, faStar } from '@fortawesome/free-solid-svg-icons';
-import { CartService } from 'src/app/services/cart.service';
-import { Cart } from 'src/app/shared/models/Cart';
-import { CartItem } from 'src/app/shared/models/CartItem';
+import { IFoodCart } from '../../shared/interfaces/IFoodCart';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-list-order',
@@ -13,16 +12,16 @@ import { CartItem } from 'src/app/shared/models/CartItem';
 export class ListOrderComponent {
   starIcon = faStar;
   timeIcon = faClock;
-  cart!: Cart;
+  cart!: IFoodCart
 
-  constructor(private cs: CartService, private router: Router) {
-    this.cs.getCartObservable().subscribe((cart) => {
+  constructor(private cartService: CartService, private router: Router) {
+    this.cartService.getCartObservable().subscribe((cart) => {
       this.cart = cart;
     });
   }
-  deleteItem(cartItem: CartItem) {
-    this.cs.deleteCartItem(cartItem.food.id);
-  }
+  // deleteItem(cartItem: CartItem) {
+  //   this.cs.deleteCartItem(cartItem.food.id);
+  // }
 
   // loadCarsLazy(event: LazyLoadEvent) {
   //   setTimeout(() => {

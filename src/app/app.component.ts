@@ -8,13 +8,12 @@ import { MessageService } from 'primeng/api';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'frontend';
 
-  constructor(private ts: ToastService, private ms: MessageService) {}
+  constructor(private toastService: ToastService, private messageService: MessageService) {}
 
   ngOnInit() {
-    this.ts.toastSubject.subscribe((message) => {
-      this.ms.add(message);
+    this.toastService.toastSubject.subscribe((message) => {
+      this.messageService.add(message);
     });
   }
 }

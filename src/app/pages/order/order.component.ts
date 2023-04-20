@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
-import { LocationService } from 'src/app/services/location.service';
+import { LocationService } from '../../services/location.service';
+import { OrderService } from '../../services/order.service';
+import { IFoodOrder } from '../../shared/interfaces/IFoodOrder';
 
 @Component({
   selector: 'app-order',
@@ -8,6 +10,7 @@ import { LocationService } from 'src/app/services/location.service';
   styleUrls: ['./order.component.scss']
 })
 export class OrderComponent implements OnInit {
+  order!: IFoodOrder;
   defaultLocation = {
     latitude: 10.803349336834533,
     longitude: 106.65275557054262

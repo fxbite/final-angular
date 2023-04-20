@@ -1,6 +1,4 @@
-import { Food, FoodTag } from 'src/app/shared/models/Food';
-
-export const sample_foods: Food[] = [
+const sample_foods = [
   {
     id: '1',
     name: 'Pizza Pepperoni',
@@ -69,7 +67,7 @@ export const sample_foods: Food[] = [
   }
 ];
 
-export const sample_tags: FoodTag[] = [
+const sample_tags = [
   { name: 'All', count: 6 },
   { name: 'FastFood', count: 4 },
   { name: 'Pizza', count: 2 },

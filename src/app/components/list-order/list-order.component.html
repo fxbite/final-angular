@@ -7,14 +7,14 @@
                         <p-image [src]="item.food.imageUrl" alt="Image" [preview]="true"></p-image>
                     <div class="description">
                         <span class="name">{{item.food.name}}</span>
-                        <span class="price">$ {{item.totalItemPrice}}</span>
+                        <span class="price">$ {{item.price}}</span>
                         <span class="quantity">
-                            <p-inputNumber [(ngModel)]="item.itemQty" mode="decimal" [showButtons]="true"
+                            <p-inputNumber [(ngModel)]="item.quantity" mode="decimal" [showButtons]="true"
                                 inputId="minmax-buttons" [min]="1" [max]="100"> </p-inputNumber>
                         </span>
                     </div>
                     <p-button icon="pi pi-trash" styleClass="p-button-secondary del-btn"
-                        (click)="deleteItem(item)"></p-button>
+                        ></p-button>
                 </div>
             </div>
         </div>

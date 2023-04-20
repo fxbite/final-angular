@@ -51,7 +51,21 @@ export class ToastService {
       message['summary'] = 'Added to cart';
     } else {
       message['severity'] = 'warn';
-      message['summary'] = 'Not add to cart';
+      message['summary'] = 'Already added';
+    }
+    return message;
+  }
+
+  showRemoveItemFromCart(option: 'success' | 'failed') {
+    let message: Message = {
+      life: 2000
+    };
+    if (option === 'success') {
+      message['severity'] = 'warn';
+      message['summary'] = 'Removed item';
+    } else {
+      message['severity'] = 'info';
+      message['summary'] = 'Not found item';
     }
     return message;
   }

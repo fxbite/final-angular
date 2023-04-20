@@ -1,7 +1,6 @@
-import { CartItem } from './CartItem';
+import { IFoodItem } from '../interfaces/IFoodCart';
 
 export class Cart {
-  items: CartItem[] = [];
-  totalQty: number = 0;
-  totalPrice: number = 0;
+  items: IFoodItem[] = [];
+  totalPrice!: number;
 }

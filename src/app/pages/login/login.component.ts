@@ -12,12 +12,12 @@ export class LoginPageComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
 
-  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {}
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) {}
 
   ngOnInit() {
-    this.loginForm = this.fb.group({
-      email: this.fb.control('', [Validators.required, Validators.email]),
-      password: this.fb.control('', [Validators.required])
+    this.loginForm = this.formBuilder.group({
+      email: this.formBuilder.control('', [Validators.required, Validators.email]),
+      password: this.formBuilder.control('', [Validators.required])
     });
   }
 

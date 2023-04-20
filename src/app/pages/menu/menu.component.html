@@ -3,7 +3,6 @@
     <div class="action-bar">
         <app-food-search></app-food-search>
     </div>
-
     <div class="menu-dishes">
         <div *ngIf="loading$ | async; else content" class="row">
             <div *ngFor="let item of skeletonResult" class="col-12 col-sm-6 col-md-4 col-lg-3 card-container">
@@ -52,7 +51,7 @@
                             ${{item.price}}
                         </div>
                         <div class="add-to-cart">
-                            <fa-icon [icon]="cartIcon"></fa-icon>
+                            <fa-icon [icon]="cartIcon" (click)="addFoodToCart(item)"></fa-icon>
                         </div>
                     </p-card>
                 </div>

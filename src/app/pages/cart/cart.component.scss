@@ -88,8 +88,7 @@ $hoverColor: #4b4c53;
         width: 50%;
 
         .name,
-        .cook-time,
-        .rating {
+        .cook-time {
           height: 20%;
         }
 
@@ -103,16 +102,6 @@ $hoverColor: #4b4c53;
           }
 
           .time {
-            font-size: inherit;
-          }
-        }
-
-        .rating {
-          fa-icon {
-            color: $starColor;
-          }
-
-          .star {
             font-size: inherit;
           }
         }

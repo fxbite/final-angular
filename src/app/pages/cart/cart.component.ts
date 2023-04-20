@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { faStar, faClock, faXmark, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
-import { CartService } from 'src/app/services/cart.service';
-import { Cart } from 'src/app/shared/models/Cart';
-import { CartItem } from 'src/app/shared/models/CartItem';
+import { IFoodCart } from 'src/app/shared/interfaces/IFoodCart';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -16,28 +15,28 @@ export class CartComponent {
   removeIcon = faXmark;
   increaseIcon = faPlus;
   descreaseIcon = faMinus;
+  totalCart!: number
+  cart!: IFoodCart;
 
-  quantity: number = 1;
-  price: number = 5;
-  cart!: Cart;
-  orderId: string = 'jgL3Wf5gCH';
-
-  constructor(private cs: CartService, private router: Router) {
-    this.cs.getCartObservable().subscribe((cart) => {
+  constructor(private cartService: CartService, private router: Router) {
+    this.cartService.getCartObservable().subscribe((cart) => {
       this.cart = cart;
+      this.totalCart = this.cart.totalPrice
     });
   }
 
   ngOnInit(): void {}
 
-  deleteItem(cartItem: CartItem) {
-    this.cs.deleteCartItem(cartItem.food.id);
+  removeItem(foodId: string) {
+    console.log('test')
+    this.cartService.removeItem(foodId)  
   }
 
-  checkQuantity(cartItem: CartItem, qty: number) {
-    this.cs.changeQuantity(cartItem.food.id, qty);
+  changeQuantity(foodId: string, quantity: number) {
+    this.cartService.changeQuantity(foodId, quantity);
   }
+
   submitOrder() {
-    this.router.navigate(['/order', this.orderId]);
+    this.router.navigate(['/order']);
   }
 }

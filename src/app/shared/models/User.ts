@@ -5,4 +5,5 @@ export class User {
   address!: string;
   access_token!: string;
   isAdmin!: boolean;
+  expire!: string;
 }
