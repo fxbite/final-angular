@@ -19,9 +19,8 @@ This project install additionally:
 - Flow: pick food -> cart -> order page -> order confirmation (admin comfirm order's status)
 - Order page: valiate (address, food amount > 0), address & time set locally
 - register.html - ngif validator['notSame'] ('PasswordsMatchValidator') didnt display
-- multi-lang
 - create recipe: InputGroup (price), EditorModule (desc)
-- set debounce for btn
+- set debounce for btn, multi-lang
 - rating star decimal: https://codepen.io/scottb/pen/KdYgRK
 
 ## Pending features
