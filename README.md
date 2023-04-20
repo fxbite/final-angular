@@ -8,18 +8,18 @@ This project install additionally:
 
 ## Functionally
 
-- Login, Register, Authentication (Admin - User)
+- Login, Register, Authentication (Admin? - User)
 - (HomePage)
+- Menu (filter by tag & input), Cart, Food Detail
+- Other: User profile, toast, lazy loading
+- Upcoming: Order, Order Confirm, CRUD
 
 ## Note
 
 - Flow: pick food -> cart -> order page -> order confirmation (admin comfirm order's status)
 - Order page: valiate (address, food amount > 0), address & time set locally
-- Message pop-up for each request/action [Prime Component](https://primeng.org/toast)
-- Toast service outside/common
-- skeleton: spinner (at minimum)
 - register.html - ngif validator['notSame'] ('PasswordsMatchValidator') didnt display
-- multi-lang, food detail
+- multi-lang
 - create recipe: InputGroup (price), EditorModule (desc)
 - set debounce for btn
 - rating star decimal: https://codepen.io/scottb/pen/KdYgRK
