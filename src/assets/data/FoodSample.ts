@@ -1,4 +1,5 @@
-import { Food, FoodTag } from '../../shared/models/Food';
+import { IFoodOrder } from 'src/app/shared/interfaces/IFoodOrder';
+import { Food, FoodTag } from 'src/app/shared/models/Food';
 
 export const sample_foods: Food[] = [
   {
@@ -78,4 +79,34 @@ export const sample_tags: FoodTag[] = [
   { name: 'Hamburger', count: 1 },
   { name: 'Fry', count: 1 },
   { name: 'Soup', count: 1 }
+];
+
+export const sample_order: IFoodOrder[] = [
+  {
+    orderId: 'axd12z',
+    user: 'chos Phat',
+    totalPrice: 12,
+    address: 'axd',
+    orderTime: '15',
+    status: 'Rejected',
+    userNote: 'axdz'
+  },
+  {
+    orderId: 'dsa13x',
+    user: 'dm Thinh',
+    totalPrice: 25,
+    address: 'dsa',
+    orderTime: '25',
+    status: 'Confirmed',
+    userNote: 'dasx'
+  },
+  {
+    orderId: 'axd14y',
+    user: 'hl Shidoru',
+    totalPrice: 20,
+    address: 'axd',
+    orderTime: '35',
+    status: 'Pending',
+    userNote: 'axdy'
+  }
 ];
