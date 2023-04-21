@@ -15,7 +15,7 @@ export class InfoOrderComponent {
   order!: IFoodOrder;
   orderTime = new Date();
 
-  constructor(private router: Router, private ts: ToastService, private orderService: OrderService, private http: HttpClient) {    
+  constructor(private router: Router, private ts: ToastService, private orderService: OrderService, private http: HttpClient) {
     // this.orderService.get().subscribe((order) => {
     //   this.order = order;
     // });

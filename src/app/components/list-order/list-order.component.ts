@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { faClock, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faClock } from '@fortawesome/free-solid-svg-icons';
 import { CartService } from '../../services/cart.service';
 import { Cart } from '../../shared/models/Cart';
 import { CartItem } from '../../shared/models/CartItem';
@@ -11,8 +11,7 @@ import { CartItem } from '../../shared/models/CartItem';
   styleUrls: ['./list-order.component.scss']
 })
 export class ListOrderComponent {
-  starIcon = faStar;
-  timeIcon = faClock;
+  clock = faClock;
   cart!: Cart;
 
   constructor(private cs: CartService, private router: Router) {

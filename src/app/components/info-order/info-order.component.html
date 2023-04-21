@@ -13,12 +13,14 @@
             <p>{{orderTime | date:'yyyy-MM-dd HH:mm:ss'}}</p>
             <!-- https://angular.io/api/common/DatePipe -->
         </div>
-    <div class="col-12">
-        <span class="p-float-label my-3">
-            <textarea id="float-input" rows="5" pInputTextarea [autoResize]="true" [value]="value" class="w-100" ></textarea>
-            <label for="float-input">Your Note</label>
-        </span>
+        <div class="col-12">
+            <span class="p-float-label my-3">
+                <textarea id="float-input" rows="5" pInputTextarea [autoResize]="true" [value]="value"
+                    class="w-100"></textarea>
+                <label for="float-input">Your Note</label>
+            </span>
+        </div>
+        <p-button label="Confirm" styleClass="p-button-raised p-button-success py-2 w-100"
+            (click)="confirm()"></p-button>
     </div>
-    <p-button label="Confirm" styleClass="p-button-raised p-button-success py-2 w-100" (click)="confirm()"></p-button>
-</div>
 </p-card>
