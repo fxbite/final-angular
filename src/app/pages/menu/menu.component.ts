@@ -15,12 +15,17 @@ export class MenuComponent implements OnInit {
   starIcon = faStar;
   cartIcon = faCartPlus;
   timeIcon = faStopwatch;
-  defaultQuantity: number = 1
+  defaultQuantity: number = 1;
   foodsResult!: IFood[];
   loading$ = this.loadingService.loading$;
   skeletonResult: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
 
-  constructor(private foodService: FoodService, private activatedRoute: ActivatedRoute, private cartService: CartService, private loadingService: LoadingService) {
+  constructor(
+    private foodService: FoodService,
+    private activatedRoute: ActivatedRoute,
+    private cartService: CartService,
+    private loadingService: LoadingService
+  ) {
     // ac.params.subscribe((params) => {
     //   if (params['searchTerm']) {
     //     this.fs.searchFoods(params['searchTerm']).subscribe((data) => {
@@ -55,6 +60,6 @@ export class MenuComponent implements OnInit {
       food: item,
       quantity: this.defaultQuantity,
       price: item.price * this.defaultQuantity
-    })
+    });
   }
 }

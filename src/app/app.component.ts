@@ -8,7 +8,6 @@ import { MessageService } from 'primeng/api';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
   constructor(private toastService: ToastService, private messageService: MessageService) {}
 
   ngOnInit() {

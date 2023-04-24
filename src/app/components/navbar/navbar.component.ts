@@ -10,7 +10,7 @@ export class NavbarComponent {
   quantity: string = '0';
   constructor(cartServices: CartService) {
     cartServices.getCartObservable().subscribe((newCart) => {
-      this.quantity = newCart.items?.length.toString()
+      this.quantity = newCart.items?.length.toString();
     });
   }
 }

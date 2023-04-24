@@ -5,7 +5,7 @@ import { IUserLogin } from '../shared/interfaces/IUserLogin';
 import { IUserRegister } from '../shared/interfaces/IUserRegister';
 import { IUserPayLoad } from '../shared/interfaces/IUserPayLoad';
 import { User } from '../shared/models/User';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 import { ToastService } from './toast.service';
 
 @Injectable({

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { faStar, faClock, faXmark, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
-import { IFoodCart } from 'src/app/shared/interfaces/IFoodCart';
+import { IFoodCart } from '../../shared/interfaces/IFoodCart';
 import { CartService } from '../../services/cart.service';
 
 @Component({
@@ -15,21 +15,21 @@ export class CartComponent {
   removeIcon = faXmark;
   increaseIcon = faPlus;
   descreaseIcon = faMinus;
-  totalCart!: number
+  totalCart!: number;
   cart!: IFoodCart;
 
   constructor(private cartService: CartService, private router: Router) {
     this.cartService.getCartObservable().subscribe((cart) => {
       this.cart = cart;
-      this.totalCart = this.cart.totalPrice
+      this.totalCart = this.cart.totalPrice;
     });
   }
 
   ngOnInit(): void {}
 
   removeItem(foodId: string) {
-    console.log('test')
-    this.cartService.removeItem(foodId)  
+    console.log('test');
+    this.cartService.removeItem(foodId);
   }
 
   changeQuantity(foodId: string, quantity: number) {

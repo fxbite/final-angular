@@ -12,7 +12,7 @@ import { CartService } from '../../services/cart.service';
 export class ListOrderComponent {
   starIcon = faStar;
   timeIcon = faClock;
-  cart!: IFoodCart
+  cart!: IFoodCart;
 
   constructor(private cartService: CartService, private router: Router) {
     this.cartService.getCartObservable().subscribe((cart) => {

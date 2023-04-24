@@ -32,7 +32,7 @@ export class FoodDetailComponent {
     activatedRoute: ActivatedRoute,
     private foodService: FoodService,
     private loadingService: LoadingService,
-    private cartService: CartService,
+    private cartService: CartService
   ) {
     activatedRoute.params.subscribe((params) => {
       if (params['id']) {
@@ -64,7 +64,7 @@ export class FoodDetailComponent {
     this.cartService.addToCart({
       food: this.foodResult,
       quantity: this.quantity,
-      price: this.quantity * this.foodResult.price,
+      price: this.quantity * this.foodResult.price
     });
   }
 }

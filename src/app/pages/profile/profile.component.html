@@ -1,4 +1,89 @@
 <app-navbar></app-navbar>
 <div class="container my-3">
-    <p-card></p-card>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card mb-4 bg-card">
+                <div class="card-body text-center">
+                    <img src="../../../assets/extra_img/VIP-Avatar.jpg" alt="avatar" class="rounded-circle img-fluid"
+                        style="width: 100px;">
+                    <h5 class="my-3">@User</h5>
+                    <p class="text-muted mb-1">User Authority</p>
+                    <p class="text-muted">HCM, VN</p>
+                    <div class="center-all">
+                        <button type="button" class="btn btn-primary"><fa-icon [icon]="faEdit"></fa-icon> Edit
+                            profile</button>
+                        <button type="button" class="btn btn-outline-primary mt-2"><fa-icon [icon]="faRef"></fa-icon>
+                            Preference</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-8">
+            <div class="card mb-4 bg-card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Full Name</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">@USER</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Email</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">example@example.com</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Phone</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">(012) 345-6789</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Order</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">XXX</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Address</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">...</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">VIP</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">N/A</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <!-- <div class="card mb-4 mb-lg-0 bg-card">
+                <div class="card-body">
+                </div>
+            </div> -->
+            <p-card styleClass="mb-4 mb-lg-0">Order List</p-card>
+        </div>
+    </div>
 </div>

@@ -76,6 +76,8 @@ import { FoodSearchComponent } from './components/food-search/food-search.compon
 import { InfoOrderComponent } from './components/info-order/info-order.component';
 import { ListOrderComponent } from './components/list-order/list-order.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { OrderConfirmComponent } from './pages/order-confirm/order-confirm.component';
 
 const PRIMENG_DEPENDENCIES = [
   ButtonModule,
@@ -145,7 +147,9 @@ const PRIMENG_DEPENDENCIES = [
     FoodSearchComponent,
     InfoOrderComponent,
     ListOrderComponent,
-    ProfileComponent
+    ProfileComponent,
+    NotFoundComponent,
+    OrderConfirmComponent
   ],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, ...PRIMENG_DEPENDENCIES],
   exports: [...PRIMENG_DEPENDENCIES],

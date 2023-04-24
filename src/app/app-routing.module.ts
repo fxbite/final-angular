@@ -9,6 +9,8 @@ import { FoodDetailComponent } from './pages/food-detail/food-detail.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { OrderComponent } from './pages/order/order.component';
 import { MenuComponent } from './pages/menu/menu.component';
+import { OrderConfirmComponent } from './pages/order-confirm/order-confirm.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -39,7 +41,7 @@ const routes: Routes = [
   {
     path: 'menu',
     component: MenuComponent,
-    title: 'Menu Food | Fsoft Food',
+    title: 'Menu Food | Fsoft Food'
   },
   { path: 'menu?search=:searchTerm', component: MenuComponent },
   { path: 'menu?tag_filter/:tag', component: MenuComponent },
@@ -52,10 +54,9 @@ const routes: Routes = [
     path: 'order',
     component: OrderComponent,
     title: 'Order | Fsoft Food'
-  }
-  // addition:
-  // orderConfirm
-  // { path: '**', component: PageNotFoundComponent },
+  },
+  { path: 'order-confirm', component: OrderConfirmComponent, title: 'Order Confirm | Fsoft Food' },
+  { path: '**', component: NotFoundComponent, title: 'Page Not Found | Fsoft Food' }
 ];
 
 @NgModule({

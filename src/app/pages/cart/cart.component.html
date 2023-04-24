@@ -2,7 +2,7 @@
 <div class="center-all mb-6">
     <h2 class="my-4">Your cart total is {{totalCart|currency}}</h2>
     <p class="text-600 mt-0 mb-4">FREE SHIPPING AND RETURN</p>
-    <p-button label="Check Out" styleClass="p-button-help"></p-button>
+    <button class="alter"><span>ORDER</span></button>
 </div>
 <div class="container mt-3">
     <div class="row">
@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="col-12 mt-2">
-            <button (click)="submitOrder()"><span>ORDER</span></button>
+            <button class="order" (click)="submitOrder()"><span>ORDER</span></button>
         </div>
     </div>
 </div>

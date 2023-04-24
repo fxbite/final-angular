@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component, ViewChild, Output, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FoodService } from '../../services/food.service';
 import { IFood } from '../../shared/interfaces/IFood';
@@ -12,6 +12,8 @@ export class FoodSearchComponent {
   searchTerm!: string;
   tags?: IFood[];
   value2!: string;
+
+  @ViewChild('searchFood', { static: false }) searchFood!: ElementRef;
 
   // @Output
 
@@ -27,7 +29,9 @@ export class FoodSearchComponent {
 
   // search(event: any) {
   //   let term = event.target.getAttribute('value');
-  search(term: string): void {
-    if (term) this.router.navigateByUrl('/menu?search=' + term);
+  search(): void {
+    // if (term) this.router.navigateByUrl('/menu?search=' + term);
+    const inputValue = this.searchFood.nativeElement.value;
+    console.log('Input value:', inputValue);
   }
 }
