@@ -17,8 +17,8 @@ export class FoodSearchComponent {
 
   // @Output
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private foodService: FoodService) {
-    this.activatedRoute.params.subscribe((params) => {
+  constructor(private ac: ActivatedRoute, private router: Router, private foodService: FoodService) {
+    this.ac.params.subscribe((params) => {
       if (params['searchTerm']) this.searchTerm = params['searchTerm'];
     });
 
@@ -29,8 +29,8 @@ export class FoodSearchComponent {
 
   // search(event: any) {
   //   let term = event.target.getAttribute('value');
-  search(): void {
-    // if (term) this.router.navigateByUrl('/menu?search=' + term);
+  search(term: string): void {
+    if (term) this.router.navigateByUrl('/menu?search=' + term);
     const inputValue = this.searchFood.nativeElement.value;
     console.log('Input value:', inputValue);
   }

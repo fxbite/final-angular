@@ -17,32 +17,32 @@ export class MenuComponent implements OnInit {
   timeIcon = faStopwatch;
   defaultQuantity: number = 1;
   foodsResult!: IFood[];
-  loading$ = this.loadingService.loading$;
-  skeletonResult: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
+  loading = this.loadingService.loading$;
+  skeletonResult: number[] = [1, 2, 3, 4];
 
   constructor(
-    private foodService: FoodService,
-    private activatedRoute: ActivatedRoute,
+    private fs: FoodService,
+    ac: ActivatedRoute,
     private cartService: CartService,
     private loadingService: LoadingService
   ) {
-    // ac.params.subscribe((params) => {
-    //   if (params['searchTerm']) {
-    //     this.fs.searchFoods(params['searchTerm']).subscribe((data) => {
-    //       this.food = data;
-    //     });
-    //   }
-    //   if (params['tag']) {
-    //     this.fs.getFoodsByTag(params['tag']).subscribe((data) => {
-    //       this.food = data;
-    //     });
-    //   }
-    //   if (params['tag'] === 'All') {
-    //     this.fs.getFoods().subscribe((data) => {
-    //       this.food = data;
-    //     });
-    //   }
-    // });
+    ac.params.subscribe((params) => {
+      if (params['searchTerm']) {
+        this.fs.searchFoods(params['searchTerm']).subscribe((data) => {
+          this.foodsResult = data;
+        });
+      }
+      if (params['tag']) {
+        this.fs.getFoodsByTag(params['tag']).subscribe((data) => {
+          this.foodsResult = data;
+        });
+      }
+      if (params['tag'] === 'All') {
+        this.fs.getFoods().subscribe((data) => {
+          this.foodsResult = data;
+        });
+      }
+    });
   }
 
   ngOnInit() {
@@ -50,7 +50,7 @@ export class MenuComponent implements OnInit {
   }
 
   private showFoods() {
-    this.foodService.getFoods().subscribe((value) => {
+    this.fs.getFoods().subscribe((value) => {
       this.foodsResult = value;
     });
   }
