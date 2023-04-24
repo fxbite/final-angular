@@ -1,5 +1,3 @@
-<!-- <p-table [value]="customers" [scrollable]="true" scrollHeight="400px" [virtualScroll]="true" [virtualScrollItemSize]="50" [lazy]="true" (onLazyLoad)="loadCarsLazy($event)"></p-table> -->
-
 <div class="card p-1">
     <div class="card-body overflow-scroll">
         <ul class="list-unstyled p-0 pe-sm-1 m-0">
@@ -9,16 +7,16 @@
                     <div class="ps-3 item-detail">
                         <div class="d-flex align-items-center justify-content-between mb-2 fw-semibold">
                             <span>{{item.food.name}}</span>
-                            <span>{{item.totalItemPrice | currency }}</span>
+                            <span>{{item.price | currency }}</span>
                         </div>
                         <div class="mb-2"><fa-icon [icon]="clock"></fa-icon> {{item.food.cookTime}}</div>
                         <div class="d-flex align-items-center justify-content-between">
-                            <p-inputNumber [(ngModel)]="item.itemQty" mode="decimal" [showButtons]="true"
+                            <p-inputNumber [(ngModel)]="item.quantity" mode="decimal" [showButtons]="true"
                                 buttonLayout="horizontal" incrementButtonIcon="pi pi-caret-right"
                                 decrementButtonIcon="pi pi-caret-left" [min]="1" [max]="100">
                             </p-inputNumber>
                             <p-button icon="pi pi-trash" styleClass="p-button-rounded p-button-secondary del-btn"
-                                (click)="deleteItem(item)"></p-button>
+                                (click)="deleteItem(item.food.id)"></p-button>
                         </div>
                     </div>
                 </li>

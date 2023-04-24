@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Table } from 'primeng/table';
-import { CartService } from 'src/app/services/cart.service';
+import { CartService } from '../../services/cart.service';
 import { IFoodOrder } from '../../shared/interfaces/IFoodOrder';
-import { Cart } from 'src/app/shared/models/Cart';
-import { sample_order } from 'src/assets/data/FoodSample';
-import { OrderService } from 'src/app/services/order.service';
+import { Cart } from '../../shared/models/Cart';
+import { OrderService } from '../../services/order.service';
 
 @Component({
   selector: 'app-order-confirm',
@@ -19,7 +18,7 @@ export class OrderConfirmComponent {
 
   constructor(private orderService: OrderService, private router: Router, ac: ActivatedRoute) {
     ac.params.subscribe((params) => {
-      this.order = orderService.getSampleOrder();
+      // this.order = orderService.getSampleOrder();
     });
     // this.cs.getCartObservable().subscribe((cart) => {
     //   this.cart = cart;

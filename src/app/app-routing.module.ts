@@ -26,23 +26,22 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
-    title: 'User Profile'
+    title: 'User Profile | Fsoft Food'
   },
   {
     path: 'home',
     component: HomeComponent,
-    title: 'Home'
+    title: 'Home | Fsoft Food'
   },
   {
     path: 'food-detail/:id',
     component: FoodDetailComponent,
-    title: 'Food Detail'
+    title: 'Food Detail | Fsoft Food'
   },
   {
     path: 'menu',
     component: MenuComponent,
-    title: 'Basic Form',
-    children: []
+    title: 'Menu Food | Fsoft Food'
   },
   { path: 'menu?search=:searchTerm', component: MenuComponent },
   { path: 'menu?tag_filter/:tag', component: MenuComponent },
@@ -52,12 +51,12 @@ const routes: Routes = [
     title: 'Cart | Fsoft Food'
   },
   {
-    path: 'order/:slug',
+    path: 'order',
     component: OrderComponent,
     title: 'Order | Fsoft Food'
   },
   { path: 'order-confirm', component: OrderConfirmComponent, title: 'Order Confirm | Fsoft Food' },
-  { path: '**', component: NotFoundComponent, title: 'E404 | Fsoft Food' }
+  { path: '**', component: NotFoundComponent, title: 'Page Not Found | Fsoft Food' }
 ];
 
 @NgModule({

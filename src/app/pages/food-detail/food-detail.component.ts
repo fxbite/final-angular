@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import { LoadingService } from '../../services/loading.service';
 import { CartService } from '../../services/cart.service';
 import { FoodService } from '../../services/food.service';
 import { IFood } from '../../shared/interfaces/IFood';
-import { Food } from '../../shared/models/Food';
+
+interface ImageSlider {
+  previewImageSrc: string;
+  thumbnailImageSrc: string;
+  title: string;
+}
 
 @Component({
   selector: 'app-food-detail',
@@ -12,50 +18,53 @@ import { Food } from '../../shared/models/Food';
   styleUrls: ['./food-detail.component.scss']
 })
 export class FoodDetailComponent {
-  value1: number = 10;
-  valueS!: number;
-  favourite: boolean = false;
-  food!: IFood;
-
+  quantity: number = 1;
+  foodResult!: IFood;
+  images!: ImageSlider[];
   faAddCart = faCartPlus;
-  btnCart = 'Add to Cart';
-  btnQty = 'Quantity';
-  
-  images: any[] = [
-    {
-      previewImageSrc: '/assets/food-4.jpg',
-      thumbnailImageSrc: '/assets/food-4.jpg',
-      title: 'Title 1'
-    },
-    {
-      previewImageSrc: '/assets/food-5.jpg',
-      thumbnailImageSrc: '/assets/food-5.jpg',
-      title: 'Title 2'
-    },
-    {
-      previewImageSrc: '/assets/food-6.jpg',
-      thumbnailImageSrc: '/assets/food-6.jpg',
-      title: 'Title 3'
-    },
-    {
-      previewImageSrc: '/assets/food-1.jpg',
-      thumbnailImageSrc: '/assets/food-1.jpg',
-      title: 'Title 4'
-    }
-  ];
+  loading$ = this.loadingService.loading$;
+  toolTips = {
+    btnCart: 'Add to Cart',
+    btnQty: 'Quantity'
+  };
 
-  constructor(ac: ActivatedRoute, private fs: FoodService, private cs: CartService, private router: Router) {
-    ac.params.subscribe((params) => {
+  constructor(
+    activatedRoute: ActivatedRoute,
+    private foodService: FoodService,
+    private loadingService: LoadingService,
+    private cartService: CartService
+  ) {
+    activatedRoute.params.subscribe((params) => {
       if (params['id']) {
-        this.fs.getFoodById(params['id']).subscribe(data => {
-            this.food = data
-        })
+        this.foodService.getFoodById(params['id']).subscribe((data) => {
+          this.foodResult = data;
+          this.images = [
+            {
+              previewImageSrc: this.foodResult.imageUrl,
+              thumbnailImageSrc: this.foodResult.imageUrl,
+              title: this.foodResult.name
+            },
+            {
+              previewImageSrc: this.foodResult.imageUrl,
+              thumbnailImageSrc: this.foodResult.imageUrl,
+              title: this.foodResult.name
+            },
+            {
+              previewImageSrc: this.foodResult.imageUrl,
+              thumbnailImageSrc: this.foodResult.imageUrl,
+              title: this.foodResult.name
+            }
+          ];
+        });
       }
     });
   }
-  
+
   addToCart() {
-    this.cs.addToCart(this.food);
-    this.router.navigateByUrl('/cart');
+    this.cartService.addToCart({
+      food: this.foodResult,
+      quantity: this.quantity,
+      price: this.quantity * this.foodResult.price
+    });
   }
 }

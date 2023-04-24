@@ -3,8 +3,9 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { IUserLogin } from '../shared/interfaces/IUserLogin';
 import { IUserRegister } from '../shared/interfaces/IUserRegister';
+import { IUserPayLoad } from '../shared/interfaces/IUserPayLoad';
 import { User } from '../shared/models/User';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 import { ToastService } from './toast.service';
 
 @Injectable({
@@ -12,19 +13,19 @@ import { ToastService } from './toast.service';
 })
 export class UserService {
   private USER_KEY = 'User';
-  private userSubject = new BehaviorSubject<User>(this.getUserFromLocalStorage());
-  public userObservable: Observable<User>;
+  private userSubject = new BehaviorSubject<IUserPayLoad>(this.getUserFromLocalStorage());
+  public userObservable: Observable<IUserPayLoad>;
 
   constructor(private http: HttpClient, private toastService: ToastService) {
     this.userObservable = this.userSubject.asObservable();
   }
 
-  public getCurrentUser(): User {
+  public getCurrentUser(): IUserPayLoad {
     return this.userSubject.value;
   }
 
-  login(userLogin: IUserLogin): Observable<User> {
-    return this.http.post<User>(environment.USER_LOGIN_URL, userLogin).pipe(
+  login(userLogin: IUserLogin): Observable<IUserPayLoad> {
+    return this.http.post<IUserPayLoad>(environment.USER_LOGIN_URL, userLogin).pipe(
       tap({
         next: (user) => {
           this.setUserToLocalStorage(user);
@@ -39,7 +40,7 @@ export class UserService {
   }
 
   register(userRegiser: IUserRegister) {
-    return this.http.post<User>(environment.USER_REGISTER_URL, userRegiser).pipe(
+    return this.http.post<IUserPayLoad>(environment.USER_REGISTER_URL, userRegiser).pipe(
       tap({
         next: (user) => {
           this.toastService.getToast(this.toastService.showRegister('success'));
@@ -57,13 +58,13 @@ export class UserService {
     window.location.reload();
   }
 
-  private setUserToLocalStorage(user: User) {
+  private setUserToLocalStorage(user: IUserPayLoad) {
     localStorage.setItem(this.USER_KEY, JSON.stringify(user));
   }
 
-  private getUserFromLocalStorage(): User {
+  private getUserFromLocalStorage(): IUserPayLoad {
     const userJson = localStorage.getItem(this.USER_KEY);
-    if (userJson) return JSON.parse(userJson) as User;
+    if (userJson) return JSON.parse(userJson) as IUserPayLoad;
     return new User();
   }
 }

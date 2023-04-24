@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import { sample_order } from 'src/assets/data/FoodSample';
+import { environment } from '../../environments/environment';
 import { IFoodOrder } from '../shared/interfaces/IFoodOrder';
+import { IFoodItem } from '../shared/interfaces/IFoodCart';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +10,11 @@ import { IFoodOrder } from '../shared/interfaces/IFoodOrder';
 export class OrderService {
   constructor(private http: HttpClient) {}
 
-  getSampleOrder(): IFoodOrder[] {
-    return sample_order;
+  createOrder(data: IFoodOrder) {
+    return this.http.post(environment.ORDER_CREATE_URL, data);
   }
 
-  createOrder(data: any) {
-    return this.http.post(environment.ORDER_CREATE_URL, data);
+  payment(data: IFoodItem[]) {
+    return this.http.post(environment.PAYMENT_URL, data)
   }
 }

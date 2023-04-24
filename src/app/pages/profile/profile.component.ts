@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { faPencil, faWrench } from '@fortawesome/free-solid-svg-icons';
-import { CartService } from 'src/app/services/cart.service';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-profile',

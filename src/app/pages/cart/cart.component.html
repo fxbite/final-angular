@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div class="center-all mb-6">
-    <h2 class="my-4">Your cart total is {{cart.totalPrice|currency}}</h2>
+    <h2 class="my-4">Your cart total is {{totalCart|currency}}</h2>
     <p class="text-600 mt-0 mb-4">FREE SHIPPING AND RETURN</p>
     <button class="alter"><span>ORDER</span></button>
 </div>
@@ -20,16 +20,14 @@
                                 {{item.food.cookTime}}
                             </span>
                         </div>
-                        <span class="price">$ {{item.totalItemPrice}}</span>
+                        <span class="price">${{item.food.price}}</span>
                         <span class="quantity">
-                            <p-inputNumber [(ngModel)]="item.itemQty" mode="decimal" [showButtons]="true"
+                            <p-inputNumber [(ngModel)]="item.quantity" (ngModelChange)="changeQuantity(item.food.id, $event)" mode="decimal" [showButtons]="true"
                                 inputId="minmax-buttons" [min]="1" [max]="100"> </p-inputNumber>
                         </span>
                     </div>
-
                     <div class="float-end">
-                        <p-button icon="pi pi-trash" styleClass="p-button-rounded p-button-secondary del-btn"
-                            (click)="deleteItem(item)"></p-button>
+                        <p-button (click)="removeItem(item.food.id)" icon="pi pi-trash" styleClass="p-button-rounded p-button-secondary del-btn"></p-button>
                     </div>
                 </div>
             </div>

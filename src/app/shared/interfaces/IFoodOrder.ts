@@ -1,9 +1,11 @@
-export interface IFoodOrder {
-  orderId: string;
-  user: string; // string[]
-  totalPrice: number;
+import { IFoodCart } from './IFoodCart';
+
+export interface IFoodOrder extends IFoodCart {
+  addressLatLng: {
+    lat: number;
+    lng: number;
+  };
+  name: string;
   address: string;
-  orderTime: string;
-  status: string;
-  userNote: string;
+  user: string;
 }

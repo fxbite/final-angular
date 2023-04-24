@@ -6,5 +6,8 @@
   }
 }
 .gradient-bg {
-  background: linear-gradient(rgba($color: aliceblue, $alpha: 0.7), rgba($color: lightgrey, $alpha: 0.6));
+  background: linear-gradient(
+    rgba($color: aliceblue, $alpha: 0.7),
+    rgba($color: lightgrey, $alpha: 0.6)
+  );
 }

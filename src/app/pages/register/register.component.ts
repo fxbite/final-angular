@@ -33,14 +33,16 @@ export class RegisterComponent {
   onSubmit() {
     this.submitted = true;
     if (this.registerForm.invalid) return;
-    this.userService.register({
-      name: this.registerForm.get('name')?.value,
-      email: this.registerForm.get('email')?.value,
-      password: this.registerForm.get('password')?.value,
-      confirmPassword: this.registerForm.get('confirmPassword')?.value,
-      address: this.registerForm.get('address')?.value
-    }).subscribe(() => {
-      this.router.navigate(['/login'])
-    })
+    this.userService
+      .register({
+        name: this.registerForm.get('name')?.value,
+        email: this.registerForm.get('email')?.value,
+        password: this.registerForm.get('password')?.value,
+        confirmPassword: this.registerForm.get('confirmPassword')?.value,
+        address: this.registerForm.get('address')?.value
+      })
+      .subscribe(() => {
+        this.router.navigate(['/login']);
+      });
   }
 }

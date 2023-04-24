@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { OrderService } from '../../services/order.service';
 import { ToastService } from '../../services/toast.service';
-import { IFoodOrder } from 'src/app/shared/interfaces/IFoodOrder';
+import { IFoodOrder } from '../../shared/interfaces/IFoodOrder';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./info-order.component.scss']
 })
 export class InfoOrderComponent {
-  value!: string;
+  value: string = '';
   order!: IFoodOrder;
   orderTime = new Date();
 
