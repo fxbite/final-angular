@@ -41,21 +41,29 @@ const routes: Routes = [
   {
     path: 'menu',
     component: MenuComponent,
-    title: 'Menu Food | Fsoft Food'
+    title: 'Menu Food | Fsoft Food',
+    canActivate: [AuthGuard]
   },
   { path: 'menu?search=:searchTerm', component: MenuComponent },
   { path: 'menu?tag_filter/:tag', component: MenuComponent },
+  // children: []
   {
     path: 'cart',
     component: CartComponent,
-    title: 'Cart | Fsoft Food'
+    title: 'Cart | Fsoft Food',
+    canActivate: [AuthGuard]
   },
   {
     path: 'order',
     component: OrderComponent,
-    title: 'Order | Fsoft Food'
+    title: 'Order | Fsoft Food',
+    canActivate: [AuthGuard]
   },
-  { path: 'order-confirm', component: OrderConfirmComponent, title: 'Order Confirm | Fsoft Food' },
+  { path: 'order-confirm',
+    component: OrderConfirmComponent,
+    title: 'Order Confirm | Fsoft Food',
+    canActivate: [AuthGuard]
+  },
   { path: '**', component: NotFoundComponent, title: 'Page Not Found | Fsoft Food' }
 ];
 

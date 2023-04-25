@@ -12,7 +12,6 @@
       .p-inputnumber-button-down,
       .p-inputnumber-button-up {
         border: none;
-        border-radius: 20%;
         background-color: #90a2b0;
       }
     }
@@ -37,6 +36,10 @@
   border: 1px solid rgba($color: #000, $alpha: 0.1);
   box-shadow: 0 0 5px rgba($color: #000, $alpha: 0.1);
 
+  .overflow-y-scroll {
+    overflow-y: scroll;
+  }
+  
   .item-detail {
     flex: 1 1 auto;
   }

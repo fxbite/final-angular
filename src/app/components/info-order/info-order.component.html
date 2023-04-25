@@ -8,7 +8,7 @@
   </div>
   <div class="col-6 col-md-8 col-lg-8">
    <p>User</p>
-   <p>{{ 2 | currency }}</p>
+   <p>{{ totalCart | currency }}</p>
    <p>3</p>
    <p>{{ orderTime | date : 'yyyy-MM-dd HH:mm:ss' }}</p>
    <!-- https://angular.io/api/common/DatePipe -->
@@ -18,7 +18,8 @@
     <textarea id="float-input" rows="5" pInputTextarea [autoResize]="true" [value]="value" class="w-100"></textarea>
     <label for="float-input">Your Note</label>
    </span>
+   <button class="alter w-100" (click)="confirm()"><span>CONFIRM</span></button>  
   </div>
-  <p-button label="Confirm" styleClass="p-button-raised p-button-success py-2 w-100" (click)="confirm()"></p-button>
+   
  </div>
 </p-card>

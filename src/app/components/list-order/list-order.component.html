@@ -1,5 +1,5 @@
 <div class="card p-1">
- <div class="card-body overflow-scroll">
+ <div class="card-body overflow-y-scroll">
   <ul class="list-unstyled p-0 pe-sm-1 m-0">
    <div *ngFor="let item of cart.items; let last = last">
     <li class="py-3 d-flex align-items-start align-items-sm-center">
@@ -20,6 +20,7 @@
         decrementButtonIcon="pi pi-caret-left"
         [min]="1"
         [max]="100"
+        [disabled]="true"
        >
        </p-inputNumber>
        <p-button icon="pi pi-trash" styleClass="p-button-rounded p-button-secondary del-btn" (click)="deleteItem(item.food.id)"></p-button>
