@@ -13,7 +13,7 @@ This project install additionally:
 - Menu (filter by tag & input), Cart, Food Details
 - Order & Order Confirm (Payment - stripe.com)
 - Other: User profile, toast, lazy loading
-- Upcoming: Admin, CRUD
+- Upcoming: CRUD
 
 ## Note
 
@@ -28,12 +28,12 @@ This project install additionally:
 
 | Feature     |           Note           |     Status     |
 | ----------- | :----------------------: | :------------: |
-| Lazy module |       more routing       | `Pending Last` |
+| Lazy module |       more routing       |  `Processing`  |
 | Test case   |         spec.ts          | `Pending Last` |
 | Email magic | forgot pass, remember me |   `Pending`    |
-| More        |                          |  `Processing`  |
+| More        |      CRUD features       | `Pending Last` |
 | Admin role  |                          | `Pending Last` |
-| Debounce    |       prevent spam       | `Pending Last` |
+| Debounce    |       prevent spam       |   `Pending`    |
 | Multi-lang  |        VN, EN, JP        | `Pending Last` |
 
 ### Other:
