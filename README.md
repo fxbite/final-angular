@@ -22,6 +22,7 @@ This project install additionally:
 - create recipe: InputGroup (price), EditorModule (desc)
 - set debounce for btn, multi-lang
 - rating star decimal: https://codepen.io/scottb/pen/KdYgRK
+- slider, sticky nav, order list restyle
 
 ## Pending features
 

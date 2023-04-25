@@ -1,12 +1,12 @@
 import { IFood } from './IFood';
 
 export interface IFoodItem {
-  food: IFood;
-  quantity: number;
-  price: number;
+    food: IFood;
+    quantity: number;
+    price: number;
 }
 
 export interface IFoodCart {
-  items: IFoodItem[];
-  totalPrice: number;
+    items: IFoodItem[];
+    totalPrice: number;
 }

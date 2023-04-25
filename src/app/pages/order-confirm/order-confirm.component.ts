@@ -1,53 +1,44 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Table } from 'primeng/table';
-import { CartService } from '../../services/cart.service';
 import { IFoodOrder } from '../../shared/interfaces/IFoodOrder';
-import { Cart } from '../../shared/models/Cart';
 import { OrderService } from '../../services/order.service';
+import { IUserPayLoad } from 'src/app/shared/interfaces/IUserPayLoad';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-order-confirm',
-  templateUrl: './order-confirm.component.html',
-  styleUrls: ['./order-confirm.component.scss']
+    selector: 'app-order-confirm',
+    templateUrl: './order-confirm.component.html',
+    styleUrls: ['./order-confirm.component.scss']
 })
-export class OrderConfirmComponent {
-  order!: IFoodOrder[];
+export class OrderConfirmComponent implements OnInit {
+    order!: IFoodOrder[];
+    userDetail!: IUserPayLoad;
+    cols!: any[];
 
-  cols!: any[];
-
-  constructor(private orderService: OrderService, private router: Router, ac: ActivatedRoute) {
-    ac.params.subscribe((params) => {
-      // this.order = orderService.getSampleOrder();
-    });
-    // this.cs.getCartObservable().subscribe((cart) => {
-    //   this.cart = cart;
-    // });
-  }
-
-  ngOnInit() {
-    this.cols = [
-      { field: 'orderId', header: 'OrderId' },
-      { field: 'user', header: 'UserName' },
-      { field: 'totalPrice', header: 'Price' },
-      { field: 'address', header: 'Location' },
-      { field: 'status', header: 'Status' }
-    ];
-  }
-
-  clear(table: Table) {
-    table.clear();
-  }
-  getSeverity(status: string) {
-    switch (status) {
-      case 'Confirmed':
-        return 'success';
-      case 'Pending':
-        return 'warning';
-      case 'Rejected':
-        return 'danger';
-      default:
-        return '';
+    constructor(private orderService: OrderService, private userService: UserService) {
+        this.userDetail = this.userService.getCurrentUser();
     }
-  }
+
+    ngOnInit() {
+        this.orderService.history(this.userDetail.id).subscribe((value) => {
+            this.order = value;
+        });
+    }
+
+    clear(table: Table) {
+        table.clear();
+    }
+    getSeverity(status: string) {
+        switch (status) {
+            case 'Confirmed':
+                return 'success';
+            case 'Pending':
+                return 'warning';
+            case 'Rejected':
+                return 'danger';
+            default:
+                return '';
+        }
+    }
 }

@@ -5,38 +5,38 @@ import { IFoodCart } from '../../shared/interfaces/IFoodCart';
 import { CartService } from '../../services/cart.service';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+    selector: 'app-cart',
+    templateUrl: './cart.component.html',
+    styleUrls: ['./cart.component.scss']
 })
 export class CartComponent {
-  starIcon = faStar;
-  timeIcon = faClock;
-  removeIcon = faXmark;
-  increaseIcon = faPlus;
-  descreaseIcon = faMinus;
-  totalCart!: number;
-  cart!: IFoodCart;
+    starIcon = faStar;
+    timeIcon = faClock;
+    removeIcon = faXmark;
+    increaseIcon = faPlus;
+    descreaseIcon = faMinus;
+    totalCart!: number;
+    cart!: IFoodCart;
 
-  constructor(private cartService: CartService, private router: Router) {
-    this.cartService.getCartObservable().subscribe((cart) => {
-      this.cart = cart;
-      this.totalCart = this.cart.totalPrice;
-    });
-  }
+    constructor(private cartService: CartService, private router: Router) {
+        this.cartService.getCartObservable().subscribe((cart) => {
+            this.cart = cart;
+            this.totalCart = this.cart.totalPrice;
+        });
+    }
 
-  ngOnInit(): void {}
+    ngOnInit(): void {}
 
-  removeItem(foodId: string) {
-    console.log('test');
-    this.cartService.removeItem(foodId);
-  }
+    removeItem(foodId: string) {
+        console.log('test');
+        this.cartService.removeItem(foodId);
+    }
 
-  changeQuantity(foodId: string, quantity: number) {
-    this.cartService.changeQuantity(foodId, quantity);
-  }
+    changeQuantity(foodId: string, quantity: number) {
+        this.cartService.changeQuantity(foodId, quantity);
+    }
 
-  submitOrder() {
-    this.router.navigate(['/order']);
-  }
+    submitOrder() {
+        window.open('/order', '_blank');
+    }
 }
