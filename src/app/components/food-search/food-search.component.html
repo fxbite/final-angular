@@ -1,6 +1,6 @@
 <div class="row gy-3">
  <!-- Search Input -->
- <div class="col-12 center-box">
+ <div class="col-12 center-line">
   <span class="p-input-icon-left">
    <i class="pi pi-search"></i>
    <input #searchFood type="text" pInputText (keyup.enter)="search(searchFood.value)" />
@@ -12,11 +12,11 @@
   </span>
  </div>
  <!-- Tag Filter : ({{tag.count}})  -->
- <div class="col-12 center-box" *ngIf="tags">
+ <div class="col-12 center-line flex-wrap" *ngIf="tags">
   <p-button
    *ngFor="let tag of tags"
    label="{{ tag.name }}"
-   styleClass="p-button-secondary me-3"
+   styleClass="p-button-secondary me-3 mt-2"
    [routerLink]="['/menu?tag_filter', tag.name]"
   ></p-button>
   <!--  (click)="filterByTag()" -->
