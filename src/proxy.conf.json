@@ -4,11 +4,5 @@
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
-  },
-  "/api1": {
-    "target": "https://payment-api-fxbite.vercel.app/",
-    "secure": false,
-    "logLevel": "debug",
-    "changeOrigin": true
   }
 }

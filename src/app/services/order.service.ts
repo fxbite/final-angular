@@ -15,6 +15,6 @@ export class OrderService {
   }
 
   payment(data: IFoodItem[]) {
-    return this.http.post(environment.PAYMENT_URL, data)
+    return this.http.post(environment.PAYMENT_URL, data);
   }
 }

@@ -15,5 +15,5 @@ export const environment = {
   ORDER_PAY_URL: '/api/orders/pay',
   ORDER_TRACK_URL: '/api/orders/track/',
 
-  PAYMENT_URL: '/api1/payment'
+  PAYMENT_URL: '/api/payment'
 };

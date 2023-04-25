@@ -16,7 +16,7 @@ export class OrderComponent implements OnInit {
     longitude: 106.65275557054262
   };
 
-  constructor(private locationService: LocationService) {}
+  constructor(private locationService: LocationService, private orderService: OrderService) {}
 
   ngOnInit() {
     this.generateMap();

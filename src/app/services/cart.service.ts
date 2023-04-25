@@ -19,7 +19,7 @@ export class CartService {
   }
 
   getCurrentCart(): IFoodCart {
-    return this.cartSubject.value
+    return this.cartSubject.value;
   }
 
   addToCart(item: IFoodItem): void {

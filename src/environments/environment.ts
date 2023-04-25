@@ -13,7 +13,7 @@ export const environment = {
   ORDER_TRACK_URL: '/api/orders/track/',
   ORDER_HISTORY_URL: '/api/history/',
 
-  PAYMENT_URL: '/api1/payment'
+  PAYMENT_URL: '/api/payment'
   // ORDERS_URL: '/api/orders',
   // ORDER_NEW_FOR_CURRENT_USER_URL: '/api/orders/newOrderForCurrentUser',
   // ORDER_PAY_URL: '/api/orders/pay',
