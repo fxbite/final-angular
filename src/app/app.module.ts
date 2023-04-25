@@ -62,6 +62,7 @@ import { GalleriaModule } from 'primeng/galleria';
 import { ChipModule } from 'primeng/chip';
 import { MessageService } from 'primeng/api';
 import { ToastService } from './services/toast.service';
+import { CarouselModule } from 'primeng/carousel';
 
 // component
 import { LoginPageComponent } from './pages/login/login.component';
@@ -130,7 +131,8 @@ const PRIMENG_DEPENDENCIES = [
     RatingModule,
     GalleriaModule,
     ImageModule,
-    ChipModule
+    ChipModule,
+    CarouselModule
 ];
 
 @NgModule({

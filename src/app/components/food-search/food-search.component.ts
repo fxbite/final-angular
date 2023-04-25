@@ -29,10 +29,10 @@ export class FoodSearchComponent {
         });
     }
 
-    @Output() event = new EventEmitter<string>()
+    @Output() event = new EventEmitter<string>();
     search(term: string): void {
         if (term) this.router.navigateByUrl('/menu?search=' + term);
         const inputValue = this.searchFood.nativeElement.value;
-        this.event.emit(inputValue)
+        this.event.emit(inputValue);
     }
 }

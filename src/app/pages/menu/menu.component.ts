@@ -19,6 +19,7 @@ export class MenuComponent implements OnInit {
     foodsResult!: IFood[];
     loading = this.loadingService.loading$;
     skeletonResult: number[] = [1, 2, 3, 4];
+    responsiveOptions!: any[];
 
     constructor(
         private fs: FoodService,
@@ -47,6 +48,24 @@ export class MenuComponent implements OnInit {
 
     ngOnInit() {
         this.showFoods();
+
+        this.responsiveOptions = [
+            {
+                breakpoint: '1200px',
+                numVisible: 3,
+                numScroll: 1
+            },
+            {
+                breakpoint: '768px',
+                numVisible: 2,
+                numScroll: 1
+            },
+            {
+                breakpoint: '576px',
+                numVisible: 1,
+                numScroll: 1
+            }
+        ];
     }
 
     private showFoods() {
@@ -64,8 +83,8 @@ export class MenuComponent implements OnInit {
     }
 
     search($event: any) {
-        this.fs.searchFoods($event).subscribe(value => {
-            this.foodsResult = value
-        })
+        this.fs.searchFoods($event).subscribe((value) => {
+            this.foodsResult = value;
+        });
     }
 }
