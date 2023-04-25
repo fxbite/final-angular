@@ -6,23 +6,23 @@ This project install additionally:
 - font awesome v3.1.2
 - folder [extra_img](src/assets/Extra_img/)
 
-## Functionally
+## Page & Functionally
 
-- Login, Register, Authentication (Admin? - User)
+- Login, Register, Authentication (User)
 - (HomePage)
-- Menu (filter by tag & input), Cart, Food Detail
+- Menu (filter by tag & input), Cart, Food Details
+- Order & Order Confirm (Payment - stripe.com)
 - Other: User profile, toast, lazy loading
-- Upcoming: Order, Order Confirm, CRUD
+- Upcoming: Admin, CRUD
 
 ## Note
 
-- Flow: pick food -> cart -> order page -> order confirmation (admin comfirm order's status)
+- Flow: pick food -> cart -> order page -> order confirmation (admin comfirm order's status) -> payment
 - Order page: valiate (address, food amount > 0), address & time set locally
 - register.html - ngif validator['notSame'] ('PasswordsMatchValidator') didnt display
 - create recipe: InputGroup (price), EditorModule (desc)
-- set debounce for btn, multi-lang
 - rating star decimal: https://codepen.io/scottb/pen/KdYgRK
-- slider, sticky nav, order list restyle
+- order list restyle
 
 ## Pending features
 
@@ -33,9 +33,15 @@ This project install additionally:
 | Email magic | forgot pass, remember me |   `Pending`    |
 | More        |                          |  `Processing`  |
 | Admin role  |                          | `Pending Last` |
+| Debounce    |       prevent spam       | `Pending Last` |
+| Multi-lang  |        VN, EN, JP        | `Pending Last` |
 
 ### Other:
 
-- light: #F5F5F5 | #e5e9ea | aliceblue
-- dark: #000 | #333
-- other variant (hot -> cold): #f8d095 > #e19f49 > #8d4821 > #452a19
+- Color Pallete:
+
+  - Light: #F5F5F5 | #e5e9ea | aliceblue
+  - Dark: #000 | #333
+  - Other variant (hot -> cold): #f8d095 > #e19f49 > #8d4821 > #452a19
+
+- Failed Consideration: sticky nav

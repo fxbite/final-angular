@@ -62,6 +62,7 @@ import { GalleriaModule } from 'primeng/galleria';
 import { ChipModule } from 'primeng/chip';
 import { MessageService } from 'primeng/api';
 import { ToastService } from './services/toast.service';
+import { CarouselModule } from 'primeng/carousel';
 
 // component
 import { LoginPageComponent } from './pages/login/login.component';
@@ -80,93 +81,101 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { OrderConfirmComponent } from './pages/order-confirm/order-confirm.component';
 
 const PRIMENG_DEPENDENCIES = [
-  ButtonModule,
-  MultiSelectModule,
-  TableModule,
-  SkeletonModule,
-  BreadcrumbModule,
-  PanelModule,
-  CardModule,
-  InputTextModule,
-  CheckboxModule,
-  RadioButtonModule,
-  DropdownModule,
-  InputTextareaModule,
-  InputNumberModule,
-  TabViewModule,
-  DialogModule,
-  ConfirmDialogModule,
-  MessagesModule,
-  MessageModule,
-  AutoCompleteModule,
-  TooltipModule,
-  FieldsetModule,
-  SliderModule,
-  ToastModule,
-  DynamicDialogModule,
-  InputSwitchModule,
-  DividerModule,
-  ChipsModule,
-  ListboxModule,
-  ConfirmPopupModule,
-  AccordionModule,
-  ToolbarModule,
-  SplitterModule,
-  ScrollPanelModule,
-  CascadeSelectModule,
-  CalendarModule,
-  ToggleButtonModule,
-  ProgressBarModule,
-  TagModule,
-  BlockUIModule,
-  DeferModule,
-  FileUploadModule,
-  SelectButtonModule,
-  PasswordModule,
-  ScrollTopModule,
-  FontAwesomeModule,
-  BadgeModule,
-  FormsModule,
-  RatingModule,
-  GalleriaModule,
-  ImageModule,
-  ChipModule
+ ButtonModule,
+ MultiSelectModule,
+ TableModule,
+ SkeletonModule,
+ BreadcrumbModule,
+ PanelModule,
+ CardModule,
+ InputTextModule,
+ CheckboxModule,
+ RadioButtonModule,
+ DropdownModule,
+ InputTextareaModule,
+ InputNumberModule,
+ TabViewModule,
+ DialogModule,
+ ConfirmDialogModule,
+ MessagesModule,
+ MessageModule,
+ AutoCompleteModule,
+ TooltipModule,
+ FieldsetModule,
+ SliderModule,
+ ToastModule,
+ DynamicDialogModule,
+ InputSwitchModule,
+ DividerModule,
+ ChipsModule,
+ ListboxModule,
+ ConfirmPopupModule,
+ AccordionModule,
+ ToolbarModule,
+ SplitterModule,
+ ScrollPanelModule,
+ CascadeSelectModule,
+ CalendarModule,
+ ToggleButtonModule,
+ ProgressBarModule,
+ TagModule,
+ BlockUIModule,
+ DeferModule,
+ FileUploadModule,
+ SelectButtonModule,
+ PasswordModule,
+ ScrollTopModule,
+ FontAwesomeModule,
+ BadgeModule,
+ FormsModule,
+ RatingModule,
+ GalleriaModule,
+ ImageModule,
+ ChipModule,
+ CarouselModule
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginPageComponent,
-    RegisterComponent,
-    HomeComponent,
-    NavbarComponent,
-    FoodDetailComponent,
-    CartComponent,
-    MenuComponent,
-    OrderComponent,
-    FoodSearchComponent,
-    InfoOrderComponent,
-    ListOrderComponent,
-    ProfileComponent,
-    NotFoundComponent,
-    OrderConfirmComponent
-  ],
-  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, ...PRIMENG_DEPENDENCIES],
-  exports: [...PRIMENG_DEPENDENCIES],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: LoadingInterceptor,
-      multi: true
-    },
-    ToastService,
-    MessageService
-  ],
-  bootstrap: [AppComponent]
+ declarations: [
+  AppComponent,
+  LoginPageComponent,
+  RegisterComponent,
+  HomeComponent,
+  NavbarComponent,
+  FoodDetailComponent,
+  CartComponent,
+  MenuComponent,
+  OrderComponent,
+  FoodSearchComponent,
+  InfoOrderComponent,
+  ListOrderComponent,
+  ProfileComponent,
+  NotFoundComponent,
+  OrderConfirmComponent
+ ],
+ imports: [
+  BrowserModule,
+  BrowserAnimationsModule,
+  AppRoutingModule,
+  HttpClientModule,
+  ReactiveFormsModule,
+  ...PRIMENG_DEPENDENCIES
+ ],
+ exports: [...PRIMENG_DEPENDENCIES],
+ providers: [
+  {
+   provide: HTTP_INTERCEPTORS,
+   useClass: AuthInterceptor,
+   multi: true
+  },
+  {
+   provide: HTTP_INTERCEPTORS,
+   useClass: LoadingInterceptor,
+   multi: true
+  },
+  ToastService,
+  MessageService
+ ],
+ bootstrap: [AppComponent]
 })
 export class AppModule {}
