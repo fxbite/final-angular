@@ -36,6 +36,8 @@ This project install additionally:
 
 ### Other:
 
-- light: #F5F5F5 | #e5e9ea | aliceblue
-- dark: #000 | #333
-- other variant (hot -> cold): #f8d095 > #e19f49 > #8d4821 > #452a19
+- Color Pallete:
+  > Light: #F5F5F5 | #e5e9ea | aliceblue
+  > Dark: #000 | #333
+  > Other variant (hot -> cold): #f8d095 > #e19f49 > #8d4821 > #452a19
+- Failed Consideration: sticky nav
