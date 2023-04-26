@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "set NODE_OPTIONS=--max_old_space_size=8192 & ng serve",
-    "build": "node --max_old_space_size=8192 ./node_modules/@angular/cli/bin/ng && npm install --force && ng build --configuration production",
+    "build": "npm install --force && ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "format": "prettier --write \"src/**/*.ts\""
