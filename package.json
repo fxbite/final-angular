@@ -9,6 +9,9 @@
     "test": "ng test",
     "format": "prettier --write \"src/**/*.ts\""
   },
+  "engines": {
+    "node": "^14.20.0 || ^16.13.0 || >=18.10.0"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^15.2.0",
